@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Portfolio-Works</title>
+	<link rel="stylesheet" type="text/css" href="across.css"/>
+	<meta name="viewport" content="width=device-width, minimum-sclae=1.0"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="../js/jquery.slides.min.js"></script>
+	<style>
+   		a:hover{
+   			opacity: 0.5;
+   			transition-property: opacity;
+   			transition-duration: 0.25s;
+   		}
+   		
+   		#controls{
+   			width:400px;
+   			margin-bottom: 0.5em;
+   		}
+   		
+   		#next{
+   			float:right;
+   		}
+        
+        .slidesjs-previous {
+            float: left;
+			color: white;
+			text-decoration: none;
+        }
+        
+        .slidesjs-next {
+            float:right;
+			color: white;
+			text-decoration: none;
+        }
+	</style>
+	<script>
+		"use strict";
+        
+        var captions = ["Starting HvZ","HvZ debug lines","End of Simulation"];
+        
+		$(document).ready(function(){
+			$('#slides').slidesjs({
+				width: 400,
+				height: 450,
+				pagination: { active: false },
+				callback: { complete: updateCaption },
+				effect: { slide: { speed: 1000 } }
+			});
+		});
+		
+		function updateCaption(number){
+			var caption = captions[number - 1];
+			$("#description").hide().text(caption).fadeIn();
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Human VS Zombie</h1>
+	</header>
+	
+	<nav>
+		<ul>
+			<li><a href="../index.html" title="Home">Home</a></li>
+			<li><a href="works.html" title="Works">Works</a>
+				<ul>
+					<li><a href="skills.html">Skills</a></li>
+					<li><a href="coffeePot.html">Coffee Pot</a></li>
+					<li><a href="hvz.html">HvZ</a></li>
+					<li><a href="threeD.html">3D Models</a></li>
+					<li><a href="collegeLyfe.html">College Lyfe</a></li>
+					<li><a href="#">Work5</a></li>
+				</ul>
+			</li>
+			<li><a href="notes.html" title="Note">Notes</a></li>	
+		</ul>
+	</nav>
+	
+	<div class="intro">
+		<h2>Introduction</h2>
+		<p>Human versus zombie simulation created in "Processing"</p>
+		<p>Instead of zombies chasing humans, like a normal HvZ, I made mine so that humans pursue zombies and cure them. I tried to make the environment look like it’s a hospital setting with beds.</p>
+		<h2>Implemented skills</h2>
+		<p>- Steering behaviors</p>
+		<p>- Collision detection and resolution</p>
+		<p>- Boundaries, Environment and Obstacle avoidance</p>
+		<h2>List of user functionality</h2>
+		<p>Moue right click spawns more zombies and left click spawns more humans(doctors)</p>
+		<p>Type any key in the keyboard to turn on and off debug lines</p>
+	</div>
+	
+	<div id="main">
+		<div id="slides">
+			<img src="../images/hvz1.png" alt="Main">
+			<img src="../images/hvz2.png" alt="Forum">
+			<img src="../images/hvz3.png" alt="Game List">
+		</div>
+		<p id="description">Starting HvZ</p>
+	</div>
+	
+	<footer>
+		<a href="#" title="Codes">My Code File</a>
+	</footer>
+</body>
+</html>
