@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Portfolio</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<meta name="viewport" content="width=device-width, minimum-sclae=1.0"/>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/jquery.slides.min.js"></script>
+	<script src="js/jquery.fullPage.js"></script>
+	
+	<script>
+		"use strict";
+	
+		var pages = ["#first", "#cp", "#zom", "#maya", "#college"];
+	
+		$(document).ready(function(){			
+			var i = 0;
+			$("#down").on("click", function(e){
+				if(i < pages.length - 1){
+					$(pages[i]).slideUp();
+					$(pages[i + 1]).slideDown();
+					i++;
+				}
+			});
+			$("#up").on("click", function(e){
+				if(i >= 1){
+					$(pages[i]).slideUp();
+					$(pages[i - 1]).slideDown();
+					i--;
+				}
+			});
+			
+			$('body').on('mousewheel', function(e){
+				if(e.originalEvent.wheelDelta > 0){
+					if(i >= 1){
+					$(pages[i]).slideUp();
+					$(pages[i - 1]).slideDown();
+					i--;
+				}
+				}
+				else{
+					if(i < pages.length - 1){
+						$(pages[i]).slideUp();
+						$(pages[i + 1]).slideDown();
+						i++;
+					}
+				}				
+			});
+		},5000);
+		
+		
+		//function updateCaption(number){
+		//	var caption = captions[number - 1];
+		//	$("#description").hide().text(caption).fadeIn();
+		//}
+	</script>
+</head>
+<body>
+	<div id="whole">
+		<header>
+			<h1>Kyunghwan Sul</h1>
+		</header>
+		
+		<nav>
+			<ul>
+				<li><a href="../index.html" title="Home">Home</a></li>
+				<li><a href="pages/works.html" title="Works">Works</a>
+					<ul>
+						<li><a href="pages/skills.html">Skills</a></li>
+						<li><a href="pages/coffeePot.html">Coffee Pot</a></li>
+						<li><a href="pages/hvz.html">HvZ</a></li>
+						<li><a href="pages/threeD.html">3D Models</a></li>
+						<li><a href="pages/collegeLyfe.html">College Lyfe</a></li>
+						<li><a href="#">Work5</a></li>
+					</ul>
+				</li>
+				<li><a href="pages/notes.html" title="Note">Notes</a></li>	
+			</ul>
+		</nav>
+		
+		<nav class="absolute">
+			<a id="up" href="#">Up</a>
+			<a id="down" href="#">Down</a>
+		</nav>
+		
+		<div class="center">
+			<div id="first">
+				<div id="main">
+					<p>Rochester Institute of Technology</p>
+					<p>Sophomore Game Design & Development</p>
+					<p>05.07.1996</p>
+					<p>Language: English & Korean</p>
+					<p>Phone: 585-471-0218</p>
+					<p>e-mail: kxs6913 [at] g.rit.edu</p>
+				</div>
+				
+				<aside>
+					<img src="images/myPic.jpg" alt="Me" width="343" height="463"/>
+				</aside>
+			</div>
+			
+			<div id="cp">
+				<a href="pages/coffeePot.html"><img src="images/cpLogo.png" alt="Coffee Pot"></a>
+				<p>Coffee Pot</p>
+			</div>
+			
+			<div id="zom">
+				<a href="pages/hvz.html" title="Human V Zombie"><div style="width:100%;height:300px;border:1px solid white;
+				font-size:30px;color:white;text-decoration:none;">Human VS Zombie</div></a>
+				<p>Human VS Zombie</p>
+			</div>
+			
+			<div id="maya">
+				<a href="pages/threeD.html" title="3D Models"><img src="images/mayaLogo.png" alt="Maya Logo"></a>
+				<p>3D Modeling (Autodesk Maya)</p>
+			</div>
+			
+			<div id="college">
+				<a href="pages/collegeLyfe.html" title="College Lyfe"><img src="images/boardFinal.png" alt="Board Design"></a>
+				<p>College Lyfe (Board Game)</p>
+			</div	>
+		</div>
+		
+		<footer>
+			<p><a href="pages/Resume.pdf" title="Resume" target="_blank">Resume</a><p>
+		</footer>
+	</div>
+</body>
+</html>
