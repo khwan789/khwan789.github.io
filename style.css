@@ -59,7 +59,7 @@ li a{ text-decoration: none;
 	font-weight: bold;}
 nav li ul{ display: none;
 	text-align: center;
-	width: 60%;
+	width: 50%;
 	margin-left: 0.7%;}
 ul li:hover{ border: 1px solid white;}
 ul li a:hover{ color: yellow;}
