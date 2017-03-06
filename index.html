@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<title>Portfolio</title>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
-	<meta name="viewport" content="width=device-width, minimum-sclae=1.0"/>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0"/>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/jquery.slides.min.js"></script>
@@ -14,8 +14,9 @@
 		"use strict";
 	
 		var pages = ["#first", "#cp", "#zom", "#maya", "#college"];
+		var pageMove = false;
 	
-		$(document).ready(function(){			
+		$(document).ready(function(){
 			var i = 0;
 			$("#down").on("click", function(e){
 				if(i < pages.length - 1){
@@ -24,6 +25,7 @@
 					i++;
 				}
 			});
+			
 			$("#up").on("click", function(e){
 				if(i >= 1){
 					$(pages[i]).slideUp();
@@ -31,30 +33,32 @@
 					i--;
 				}
 			});
-			
+
 			$('body').on('mousewheel', function(e){
 				if(e.originalEvent.wheelDelta > 0){
-					if(i >= 1){
-					$(pages[i]).slideUp();
-					$(pages[i - 1]).slideDown();
-					i--;
-				}
+					if(i >= 1 && pageMove == false){
+						$(pages[i]).slideUp();
+						$(pages[i - 1]).slideDown();
+						i--;
+						pageMove = true;
+					}	
+					setTimeout(function() {pageMove = false;}, 2000);
 				}
 				else{
-					if(i < pages.length - 1){
+					if(i < pages.length - 1 && pageMove == false){
 						$(pages[i]).slideUp();
 						$(pages[i + 1]).slideDown();
 						i++;
+						pageMove = true;
+						
 					}
-				}				
+					setTimeout(function() {pageMove = false;}, 2000);
+				}			
 			});
+			
 		},5000);
-		
-		
-		//function updateCaption(number){
-		//	var caption = captions[number - 1];
-		//	$("#description").hide().text(caption).fadeIn();
-		//}
+
+
 	</script>
 </head>
 <body>
@@ -65,10 +69,9 @@
 		
 		<nav>
 			<ul>
-				<li><a href="../index.html" title="Home">Home</a></li>
+				<li><a href="index.html" title="Home">Home</a></li>
 				<li><a href="pages/works.html" title="Works">Works</a>
 					<ul>
-						<li><a href="pages/skills.html">Skills</a></li>
 						<li><a href="pages/coffeePot.html">Coffee Pot</a></li>
 						<li><a href="pages/hvz.html">HvZ</a></li>
 						<li><a href="pages/threeD.html">3D Models</a></li>
@@ -76,7 +79,6 @@
 						<li><a href="#">Work5</a></li>
 					</ul>
 				</li>
-				<li><a>Blank</a></li>
 			</ul>
 		</nav>
 		
@@ -97,7 +99,7 @@
 				</div>
 				
 				<aside>
-					<img src="images/myPic.jpg" alt="Me" width="343" height="463"/>
+					<img src="images/" alt="Me" width="343" height="463"/>
 				</aside>
 			</div>
 			
@@ -120,7 +122,7 @@
 			<div id="college">
 				<a href="pages/collegeLyfe.html" title="College Lyfe"><img src="images/boardFinal.png" alt="Board Design"></a>
 				<p>College Lyfe (Board Game)</p>
-			</div	>
+			</div>
 		</div>
 		
 		<footer>
