@@ -117,6 +117,12 @@ footer a{
 #college img{
 	width: 55%;
 }
+#3dWorld{
+	display: none;
+	text-align: center;
+	padding: 10px 0px 10px 0px;
+}
+
 .absolute{
 	position: fixed;
 	background-color: black;
