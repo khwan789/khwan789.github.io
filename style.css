@@ -117,7 +117,12 @@ footer a{
 #college img{
 	width: 55%;
 }
-#3dWorld{
+#threeDWorld{
+	display: none;
+	text-align: center;
+	padding: 10px 0px 10px 0px;
+}
+#sDream{
 	display: none;
 	text-align: center;
 	padding: 10px 0px 10px 0px;
