@@ -127,6 +127,9 @@ footer a{
 	text-align: center;
 	padding: 10px 0px 10px 0px;
 }
+#sDream img{
+	width: 50%;
+}
 
 .absolute{
 	position: fixed;
