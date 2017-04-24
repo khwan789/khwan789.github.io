@@ -38,27 +38,21 @@
 	<script>
 		"use strict";
         
-        var captions = ["Unicycle (front)", "Unicycle (side)","Unicycle (side)", "Moose Head","Moose Head 2","Moose Head 3","Clock", "Fan", "Fan2"];
         
 		$(document).ready(function(){
 			$('#slides').slidesjs({
-				width: 400,
-				height: 250,
+				width: 300,
+				height: 450,
 				pagination: { active: false },
-				callback: { complete: updateCaption },
 				effect: { slide: { speed: 1000 } }
 			});
 		});
-		
-		function updateCaption(number){
-			var caption = captions[number - 1];
-			$("#description").hide().text(caption).fadeIn();
-		}
+
 	</script>
 </head>
 <body>
 	<header>
-		<h1>3D Models (Autodesk Maya)</h1>
+		<h1>My Sketches</h1>
 	</header>
 	<nav>
 		<ul>
@@ -85,17 +79,14 @@
 	
 	<div id="main">
 		<div id="slides">
-			<img src="../images/maya/uniFront.png" alt="Unicycle Front">
-			<img src="../images/maya/uniSide.png" alt="Unicycle Side">
-			<img src="../images/maya/uniSide2.png" alt="Unicycle Side">
-			<img src="../images/maya/head.png" alt="Moose head">
-			<img src="../images/maya/head2.png" alt="Moose head">
-			<img src="../images/maya/head3.png" alt="Moose head">
-			<img src="../images/maya/clock.png" alt="Clock">
-			<img src="../images/maya/fan.png" alt="Fan">
-			<img src="../images/maya/fan2.png" alt="Fan">
+			<img src="../images/sketch/sketch1.png" alt="bird sketch">
+			<img src="../images/sketch/sketch2.png" alt="red panda sketch">
+			<img src="../images/sketch/sketch3.png" alt="bird sketch2">
+			<img src="../images/sketch/sketch4.png" alt="man sketch">
+			<img src="../images/sketch/sketch5.png" alt="enemy sketch">
+			<img src="../images/sketch/sketch6.png" alt="enemy sketch2">
 		</div>
-		<p id="description">Unicycle (front)</p>
+		<p id="description">Sketches</p>
 	</div>
 	
 	<footer>

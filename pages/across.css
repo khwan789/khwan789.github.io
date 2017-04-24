@@ -3,13 +3,13 @@ body{
 	font-family: Corbel;
 	margin: auto;
 	margin-top: 3%;
-	background-color: black;
-	color: white;
+	background: linear-gradient(skyblue,dimgray);
+	color: black;
 }
 
 h1{
-	color: white;
-	border: 3px solid white;
+	color: black;
+	border: 3px solid black;
 	padding: 20px;
 	margin-top: 5%;
 	text-align: center;	
@@ -28,20 +28,20 @@ ul{	display: table;
 ul li{ display: table-cell;
 	text-align: center;}
 li a{ text-decoration: none;
-	color: white;
+	color: black;
 	font-size: 1.5em;
 	font-weight: bold;}
 nav li ul{ display: none;
 	text-align: center;
 	width: 60%;
 	margin-left: -29.1%;}
-ul li:hover{ border: 1px solid white;}
+ul li:hover{ border: 1px solid black;}
 ul li a:hover{ color: yellow;}
 nav li:hover ul{
 	display: block;
 	position: absolute;
-	background-color: black;
-	border: 1px solid white;
+	background-color: skyblue;
+	border: 1px solid black;
 }
 nav li:hover ul li{
 	display: block;
@@ -62,7 +62,7 @@ nav li:hover ul li{
 #main{
 	width: 80%;
 	text-align: center;
-	color: white;
+	color: black;
 	font-size: 1.5em;
 	font-weight: bold;
 	margin: auto;
@@ -84,9 +84,9 @@ footer{
 }
 footer a{
 	text-decoration: none;
-	color: white;
+	color: black;
 	font-size: 1.5em;
-	border: 1px solid white;
+	border: 1px solid black;
 	padding: 5px;
 	font-weight: bold;
 }
@@ -123,8 +123,8 @@ footer p{
 	body{	padding-top: 5px; width: 80%;	}
 	
 	h1{
-		color: white;
-		border: 1px solid white;
+		color: black;
+		border: 1px solid black;
 		padding: 10px;
 		margin-top: 5%;
 		text-align: center;	
