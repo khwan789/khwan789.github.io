@@ -66,7 +66,7 @@ ul li a:hover{ color: yellow;}
 nav li:hover ul{
 	display: block;
 	position: absolute;
-	background-color: skyblue;
+	background-color: greenery;
 	border: 1px solid black;
 }
 nav li:hover ul li{
@@ -137,7 +137,7 @@ footer a{
 }
 .absolute{
 	position: fixed;
-	background-color: skyblue;
+	background-color: greenery;
 	border: 1px solid black;
 	text-align: center;
 	padding-top: 10px;
