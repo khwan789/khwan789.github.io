@@ -1,190 +1,57 @@
 body{
-	width: 60%;
-	font-family: Corbel;
-	margin: auto;
-	margin-top: 4%;
-	background-color: rgb(136,176,75);
-}
-
-#whole{
-	width: 100%;
-	margin-top: 100px;
-	margin: 0;
-	padding: 0;
-
-}
-
-#main{
-	float: left;
-	width: 50%;
-}
-
-#main p{
-	color: black;
-	font-size: 1.5em;
-	padding: 10px 20px 10px 0px;
-}
-
-.center{
-	width: 90%;
-	margin: auto;
-}
-
-h1{
-	color: black;
-	border: 3px solid black;
-	padding: 20px;
-	margin-top: 5%;
-	text-align: center;	
-	font-size: 3em;
-}
-
-p{
-	color: black;
-	font-size: 1.5em;
-}
-
-
-nav{ margin-top: 50px;
-	margin-bottom: 50px;}
-ul{	display: table;
-	width: 100%;
-	list-style: none;
-	padding-left: 0;}
-ul li{ display: table-cell;
-	text-align: center;}
-li a{ text-decoration: none;
-	color: black;
-	font-size: 1.5em;
-	font-weight: bold;}
-nav li ul{ display: none;
-	text-align: center;
-	width: 60%;
-	margin-left: -29.1%;}
-ul li:hover{ border: 1px solid black;}
-ul li a:hover{ color: yellow;}
-nav li:hover ul{
-	display: block;
-	position: absolute;
-	background-color: rgb(136,176,75);
-	border: 1px solid black;
-}
-nav li:hover ul li{
-	display: block;
-	padding: 30px 0px 30px 0px;
-}
-
-aside{
-	float: right;
-	margin: auto;
-}
-
-footer{
-	clear: both;
-	padding-top: 7%;
-	text-align: center;
-}
-
-footer a{
-	text-decoration: none;
-	color: black;
-	font-size: 1.5em;
-	border: 1px solid black;
-	padding: 5px;
-	font-weight: bold;
-}
-
-#cp {
-	display: none;
-	text-align: center;
-	padding: 10px 0px 10px 0px;
-}
-#zom{
-	display: none;
-	text-align: center;
-	padding: 10px 0px 10px 0px;
-}
-#maya{
-	display: none;
-	text-align: center;
-	padding: 10px 0px 10px 0px;
-}
-#college{
-	display: none;
-	text-align: center;
-	padding: 10px 0px 10px 0px;
-}
-#college img{
-	width: 55%;
-}
-#threeDWorld{
-	display: none;
-	text-align: center;
-	padding: 10px 0px 10px 0px;
-}
-#sDream{
-	display: none;
-	text-align: center;
-	padding: 10px 0px 10px 0px;
-}
-#sDream img{
-	width: 50%;
-}
-#sketch{
-    display: none;
+    background-color: white;
+    color: #575757;
     text-align: center;
-    padding: 10px 0px 10px 0px
-}
-.absolute{
-	position: fixed;
-	background-color: rgb(136,176,75);
-	border: 1px solid black;
-	text-align: center;
-	padding-top: 10px;
-	top: 40%;
-	right: 10%;
-	width: 70px;
-	height: 60px;
-}
-.absolute a{
-	text-decoration: none;
-	color: black;
-	font-weight: bold;
-	display: block;
-	padding-bottom: 10px;
+    font-family: Champagne;
 }
 
-@media screen and (max-width: 480px){
-	body{ padding-top: 5px; width: 90%; }
-	
-	h1{
-		color: black;
-		border: 1px solid black;
-		padding: 10px;
-		margin-top: 5%;
-		text-align: center;	
-		font-size: 2em;
-	}
-	#main{ width: 100%; text-align: justify;}
-	#main p{
-		font-size:20px;
-		width: 90%;
-		padding: 5px;
-		font-weight: bold;
-	}
-	aside{	text-align:center;	}
-	aside img{	width: 243px; height: 328px;	}
-	nav li ul{ display: none;
-		text-align: center;
-		width: 80%;
-		margin-left: -24.5%;
-	}
-	nav li:hover ul li{
-		display: block;
-		padding: 10px 0px 10px 0px;
-	}
-	footer a{
-		font-size: 1em;
-	}
+/*navigation bar*/
+/*don't need to touch unless adding more menus*/
+nav{ 
+    width: 75%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-top: 4%;
+    font-size: 1.3em;
+}
+nav a{ display: inline-block; vertical-align: middle; text-decoration: none; }
+#logo{ float: left; }
+#projects{ float: right; margin-right: 50px; color: black; }
+#projects:hover{ color: mediumvioletred; }
+#about{ float: right; color: gray; }
+#about:hover{ color: mediumvioletred; }
 
+/*main projects*/
+#main{
+    width: 78%;
+    height: 100%;
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;    
+    text-align: justify;
+    text-align-last: justify;
+}
+.profile-image { visibility: hidden; }
+.profile-image-wrap { 
+    width: 24vw;
+    height: 20vw;
+    margin-top: 3%;
+    display: inline-block;
+    overflow: hidden; 
+}
+.profile-image-wrap img.square { visibility: visible; width: 100%; }
+.profile-image-wrap img.portrait { visibility: visible; width: 100%; height: auto; }
+.profile-image-wrap img.landscape { visibility: visible; height: 100%; width: auto; }
+
+
+#main img:hover{
+    opacity: 0.8;
+}
+
+/*footer - social network links*/
+
+@font-face {
+    font-family: "Champagne";
+    src: url("ChampagneBold.ttf");
 }
