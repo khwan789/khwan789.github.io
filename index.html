@@ -5,62 +5,85 @@
         <title>Kyunghwan's Portfolio</title>
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <meta name="viewport" content="width=device-width, minimum-scale=1.0"/>
-
         <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
         <script>
-            $(window).on("load",function(){
-                cropProfileImage = function(pic){
-                    var h = $(pic).height(),
-                        w = $(pic).width();
+            'use strict';
 
-                    if($(pic).parent('.profile-image-wrap').length === 0){
-                        // wrap the image in a "cropping" div
-                        $(pic).wrap('<div class="profile-image-wrap"></div>');
-                    }
+            window.onload = init;
 
-                    if(h > w){
-                        // pic is portrait
-                        $(pic).addClass('portrait');
-                        var m = -(((h/w) * 100)-100)/2; //math the negative margin
-                        $(pic).css('margin-top', m + '%');    
-                    }else if(w > h){ 
-                        // pic is landscape
-                        $(pic).addClass('landscape'); 
-                        var m = -(((w/h) * 100)-100)/2;  //math the negative margin
-                        $(pic).css('margin-left', m + '%');
-                    }else {
-                        // pic is square
-                        $(pic).addClass('square');
-                    }
+
+
+            function init(){
+                cropProfileImage('img.profile-image');
+            }
+
+            function cropProfileImage(pic){
+                var h = $(pic).height(),
+                    w = $(pic).width();
+
+                if($(pic).parent('.profile-image-wrap').length === 0){
+                    // wrap the image in a "cropping" div
+                    $(pic).wrap('<div class="profile-image-wrap"></div>');
                 }
 
-                // Call the function for the images you want to crop
-                cropProfileImage('img.profile-image');
-            });
+                if(h > w){
+                    // pic is portrait
+                    $(pic).addClass('portrait');
+                    var m = -(((h/w) * 100)-100)/2; //math the negative margin
+                    $(pic).css('margin-top', m + '%');    
+                }else if(w > h){ 
+                    // pic is landscape
+                    $(pic).addClass('landscape'); 
+                    var m = -(((w/h) * 100)-100)/2;  //math the negative margin
+                    $(pic).css('margin-left', m + '%');
+                }else {
+                    // pic is square
+                    $(pic).addClass('square');
+                }
+            }
 
+            var currentPage = 'main';
+
+            $(document).ready(function(){
+                $('#bombrix').click(function(){
+                    $('#bombrixPage').slideDown();
+                    $('#main').slideUp();
+                });
+
+            });
         </script>
 
     </head>
     <body>
 
         <nav>
-            <a href="" id="logo"><img src="logo" width="100" heigth="100" alt="logo"></a>
+            <a href="index.html" id="logo"><img src="logo" width="100" heigth="100" alt="logo"></a>
             <a href="" id="about">ABOUT</a>
-            <a href="pages.html" id="projects">PROJECTS</a>
+            <a href="index.html" id="projects">PROJECTS</a>
         </nav>
-
+        
         <div id="main">
-            <a href=""><img class="profile-image" src="profileImages/bombrixProfile.png"></a>
-            <a href=""><img class="profile-image" src="profileImages/bombrixProfile.png"></a>
-            <a href=""><img class="profile-image" src="profileImages/bombrixProfile.png"></a>
+            <img class="profile-image" id="bombrix" src="bombrix/img1.png">
 
-            <a href=""><img class="profile-image" src="profileImages/bombrixProfile.png"></a>
-            <a href=""><img class="profile-image" src="profileImages/bombrixProfile.png"></a>
-            <a href=""><img class="profile-image" src="profileImages/bombrixProfile.png"></a>
-            
-            <a href=""><img class="profile-image" src="profileImages/bombrixProfile.png"></a>
-            <a href=""><img class="profile-image" src="profileImages/bombrixProfile.png"></a>
-            <a href=""><img class="profile-image" src="profileImages/bombrixProfile.png"></a>
+        </div>
+
+        <div class="pages" id="bombrixPage" style="display: none">
+            <div id="left">
+                <h1>Bombrix</h1>
+                
+                <p></p>
+            </div>
+            <div id="right">
+                <img src="bombrix/img1.png">
+                <img src="bombrix/img2.png">
+                <img src="bombrix/img3.png">
+                <img src="bombrix/img4.png">
+                <img src="bombrix/img5.png">
+                <img src="bombrix/img6.png">
+                <img src="bombrix/img7.png">
+                <img src="bombrix/img8.png">
+            </div>
         </div>
     </body>
 </html>

@@ -1,6 +1,5 @@
 body{
     background-color: white;
-    color: #575757;
     text-align: center;
     font-family: Champagne;
 }
@@ -47,6 +46,32 @@ nav a{ display: inline-block; vertical-align: middle; text-decoration: none; }
 
 #main img:hover{
     opacity: 0.8;
+}
+
+.pages{
+    width: 78%;
+    display: inline-block;
+    margin-top: 3%;
+}
+#left{
+    width: 50%;
+    display: inline-block;
+    float: left;
+    text-align: left;
+}
+#right{
+    width: 50%;
+    float: right;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    text-align-last: justify;
+}
+#right img{
+    width: 80%;
+    float: right;
+    margin-bottom: 20px;
 }
 
 /*footer - social network links*/
