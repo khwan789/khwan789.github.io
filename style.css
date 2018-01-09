@@ -1,16 +1,27 @@
+* { margin: 0; }
+html,body{ height: 100%; }
 body{
     background-color: white;
     text-align: center;
     font-family: Champagne;
 }
 
+.wrapper{
+    min-height: 100%;
+    margin-bottom: -120px;
+}
+.wrapper:after {
+    content: "";
+    height: 120px;
+    display: block;
+}
 /*navigation bar*/
 /*don't need to touch unless adding more menus*/
 nav{ 
     width: 75%; 
     margin-left: auto; 
     margin-right: auto; 
-    margin-top: 4%;
+    padding-top: 4%;
     font-size: 1.3em;
 }
 nav a{ display: inline-block; vertical-align: middle; text-decoration: none; }
@@ -23,8 +34,7 @@ nav a{ display: inline-block; vertical-align: middle; text-decoration: none; }
 /*main projects*/
 #main{
     width: 78%;
-    height: 100%;
-    margin-top: 1%;
+    padding-top: 1%;
     margin-left: auto;
     margin-right: auto;
     display: inline-block;    
@@ -51,8 +61,9 @@ nav a{ display: inline-block; vertical-align: middle; text-decoration: none; }
 .pages{
     width: 78%;
     display: inline-block;
-    margin-top: 3%;
+    padding-top: 3%;
 }
+
 #left{
     width: 50%;
     display: inline-block;
@@ -71,10 +82,22 @@ nav a{ display: inline-block; vertical-align: middle; text-decoration: none; }
 #right img{
     width: 80%;
     float: right;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 /*footer - social network links*/
+footer{
+    height: 120px;
+    float: right;
+    margin-right: 13%;
+    position: relative;
+}
+
+footer img{
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+}
 
 @font-face {
     font-family: "Champagne";
