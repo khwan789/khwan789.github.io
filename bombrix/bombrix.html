@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Kyunghwan's Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="../style.css"/>
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0"/>
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+
+        <script>
+            'use strict';
+
+            window.onload = init;
+
+            function init(){
+                cropProfileImage('img.profile-image');
+            }
+
+            function cropProfileImage(pic){
+                var h = $(pic).height(),
+                    w = $(pic).width();
+
+                if($(pic).parent('.profile-image-wrap').length === 0){
+                    // wrap the image in a "cropping" div
+                    $(pic).wrap('<div class="profile-image-wrap"></div>');
+                }
+
+                if(h > w){
+                    // pic is portrait
+                    $(pic).addClass('portrait');
+                    var m = -(((h/w) * 100)-100)/2; //math the negative margin
+                    $(pic).css('margin-top', '%');//m + '%');    
+                }else if(w > h){ 
+                    // pic is landscape
+                    $(pic).addClass('landscape'); 
+                    var m = -(((w/h) * 100)-100)/2;  //math the negative margin
+                    $(pic).css('margin-left', m + '%');
+                }else {
+                    // pic is square
+                    $(pic).addClass('square');
+                }
+            }
+
+        </script>
+
+    </head>
+    <body>
+        <div class="wrapper">
+            <nav>
+                <a href="../index.html" id="logo"><img src="logo" width="100" heigth="100" alt="logo"></a>
+                <a href="" id="about">ABOUT</a>
+                <a href="../index.html" id="projects">PROJECTS</a>
+            </nav>
+
+            <div class="pages" id="bombrixPage">
+                <div id="left">
+                    <h1>Bombrix</h1>
+                    <p>Bombrix is a mobile puzzle game that is currently up on Google Play. <br>10,000~50,000 Downloads.</p> 
+                    <p>Bitmango - Puzzle Game Company Intern <br>June, 2017 ~ August, 2017</p>
+                    <p>As a game designer I worked on designing the game, documenting all the details. The team I worked on did not have an artist so I also worked on the overall style and created the Icon for the game. On the process I created 240+ levels and leveled the arcade mode.</p>
+                    <p>link to: <a href="https://play.google.com/store/apps/details?id=kr.co.xlsoft.go.bombrix">Bombrix - Google Play</a></p>
+                    <h2>Objective</h2>
+                    <p>Clear the board by dropping the brick(s) to the right place. Three or more same touching blocks explodes!! Figure out a way to destroy all the bricks at once.</p>
+                </div>
+                <div id="right">
+                    <button onclick="myShow.next()">Next</button>
+
+                    <img class="images" src="img1.png">
+                    <img class="images" src="img2.png">
+                    <img class="images" src="img3.png">
+                    <img class="images" src="img4.png">
+                    <img class="images" src="img5.png">
+                    <img class="images" src="img6.png">
+                    <img class="images" src="img7.png">
+                    <img class="images" src="img8.png">
+                    <script>var myShow = w3.slideshow(".images",0);</script>
+
+                    <button onclick="myShow.previous()">Prev</button>
+
+                </div>
+            </div>
+        </div>
+        <footer>
+            <a href="https://www.facebook.com/kyunghwan.sul"><img src='../branding/fbLogo.png'></a>
+        </footer>
+    </body>
+</html>

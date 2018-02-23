@@ -19,8 +19,11 @@
             }
 
             function cropProfileImage(pic){
-                var h = $(pic).height(),
-                    w = $(pic).width();
+                var h = pic.height;
+                var w = pic.width;
+                
+                //var h = $(pic).height();
+                //var w = $(pic).width();
 
                 if($(pic).parent('.profile-image-wrap').length === 0){
                     // wrap the image in a "cropping" div
@@ -30,7 +33,7 @@
                 if(h > w){
                     // pic is portrait
                     $(pic).addClass('portrait');
-                    var m = -(((h/w) * 100)-100)/2; //math the negative margin
+                    var m = -(((h/w) * 100))/2; //math the negative margin
                     $(pic).css('margin-top', '%');//m + '%');    
                 }else if(w > h){ 
                     // pic is landscape
@@ -42,17 +45,6 @@
                     $(pic).addClass('square');
                 }
             }
-
-            var currentPage = '#main';
-
-            $(document).ready(function(){
-                $('#bombrix').click(function(){
-                    $('#bombrixPage').slideDown();
-                    $('#main').slideUp();
-                    currentPage = '#bombrix';
-                });
-            });
-
         </script>
 
     </head>
@@ -65,24 +57,9 @@
             </nav>
 
             <div id="main">
-                <img class="profile-image" id="bombrix" src="bombrix/img1.png">
-            </div>
-
-            <div class="pages" id="bombrixPage" style="display: none">
-                <div id="left">
-                    <h1>Bombrix</h1>
-                    <p>Bombrix is a mobile puzzle game</p>
-                </div>
-                <div id="right">
-                    <img src="bombrix/img1.png">
-                    <img src="bombrix/img2.png">
-                    <img src="bombrix/img3.png">
-                    <img src="bombrix/img4.png">
-                    <img src="bombrix/img5.png">
-                    <img src="bombrix/img6.png">
-                    <img src="bombrix/img7.png">
-                    <img src="bombrix/img8.png">
-                </div>
+                <a href="bombrix/bombrix.html"><img class="profile-image" src="bombrix/logo.png"></a>
+                <a href="bouncyB/bouncyB.html"><img class="profile-image" src="bouncyB/bb1.jpg"></a>
+                <a href="cloudus/cloudus.html"><img class="profile-image" src="cloudus/logo.png"></a>
             </div>
         </div>
         <footer>
