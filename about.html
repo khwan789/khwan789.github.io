@@ -8,55 +8,17 @@
         <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="https://www.w3schools.com/lib/w3.js"></script>
 
-        <script>
-            'use strict';
-
-            window.onload = init;
-
-
-
-            function init(){
-                cropProfileImage('img.profile-image');
-            }
-
-            function cropProfileImage(pic){
-                var h = $(pic).height(),
-                    w = $(pic).width();
-
-                if($(pic).parent('.profile-image-wrap').length === 0){
-                    // wrap the image in a "cropping" div
-                    $(pic).wrap('<div class="profile-image-wrap"></div>');
-                }
-
-                if(h > w){
-                    // pic is portrait
-                    $(pic).addClass('portrait');
-                    var m = -(((h/w) * 100)-100)/2; //math the negative margin
-                    $(pic).css('margin-top', '%');//m + '%');    
-                }else if(w > h){ 
-                    // pic is landscape
-                    $(pic).addClass('landscape'); 
-                    var m = -(((w/h) * 100)-100)/2;  //math the negative margin
-                    $(pic).css('margin-left', m + '%');
-                }else {
-                    // pic is square
-                    $(pic).addClass('square');
-                }
-            }
-        </script>
-
     </head>
     <body>
-        <div class="wrapper">
             <nav>
-                <a href="index.html" id="logo"><img src="logo" width="100" heigth="100" alt="logo"></a>
+                <a href="index.html" id="logo">KYUNGHWAN SUL</a>
                 <a href="" id="about" style="color: black;">ABOUT</a>
                 <a href="index.html" id="projects" style="color: gray;">PROJECTS</a>
             </nav>
 
-            <div class="pages" id="bouncyPage">
+            <div id="pages">
                 <div id="left">
-                    <h1>Kyunghwan Sul</h1>
+                    <h2>Kyunghwan Sul</h2><br>
                     <p>Rochester Institute of Technology - Game Design and Development BS
                         <br>Birthdate: 05/07/1996</p> 
                     <p>kyunghwan789 [at] gmail.com</p>
@@ -68,7 +30,6 @@
                     <img src="myImg.jpg" style="width:80%;">
                 </div>
             </div>
-        </div>
         <footer>
             <a href="https://www.facebook.com/kyunghwan.sul"><img src='branding/fbLogo.png'></a>
         </footer>
