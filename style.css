@@ -3,7 +3,7 @@ html,body{ height: 100%; }
 body{
     background-color: white;
     text-align: center;
-    font-family: Champagne;
+    font-family: myFont;
 }
 
 /*navigation bar*/
@@ -17,7 +17,7 @@ nav{
 }
 nav a{ text-decoration: none; font-size: 1.3em;}
 
-#logo{ float: left; color: black; padding-left: 10%;}
+#logo{ float: left; color: black; padding-left: 10%; font-weight: bold;}
 #projects{ float: right; padding-right: 50px; color: black; }
 #projects:hover{ color: mediumvioletred; }
 #about{ float: right; color: gray; padding-right: 10%; }
@@ -120,6 +120,6 @@ footer a{
 }
 
 @font-face {
-    font-family: "Champagne";
-    src: url("ChampagneBold.ttf");
+    font-family: myFont;
+    src: url(RobotoCondensed-Regular.ttf);
 }
