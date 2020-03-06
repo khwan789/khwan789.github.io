@@ -23,7 +23,12 @@ nav a{ text-decoration: none; font-size: 1.3em;}
 #about{ float: right; color: gray; padding-right: 10%; }
 #about:hover{ color: mediumvioletred; }
 
-
+p, a{
+    font-size: 1.3em;
+}
+p a{
+    font-size: 1em;
+}
 
 /*main projects*/
 #main{
