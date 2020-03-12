@@ -101,6 +101,11 @@ h1{
     width: 50%;
     float: right;
 }
+video{
+    width: 90%;
+    float: right;
+    padding-bottom: 3%;
+}
 .images{
     width: 40%;
     float:right;
