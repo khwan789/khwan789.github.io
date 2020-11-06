@@ -2,95 +2,65 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Kyunghwan's Portfolio</title>
         <link rel="stylesheet" type="text/css" href="../style.css"/>
         <meta name="viewport" content="width=device-width, minimum-scale=1.0"/>
-        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-        <script src="https://www.w3schools.com/lib/w3.js"></script>
-
-        <script>
-            'use strict';
-
-            window.onload = init;
-
-
-
-            function init(){
-                cropProfileImage('img.profile-image');
-            }
-
-            function cropProfileImage(pic){
-                var h = $(pic).height(),
-                    w = $(pic).width();
-
-                if($(pic).parent('.profile-image-wrap').length === 0){
-                    // wrap the image in a "cropping" div
-                    $(pic).wrap('<div class="profile-image-wrap"></div>');
-                }
-
-                if(h > w){
-                    // pic is portrait
-                    $(pic).addClass('portrait');
-                    var m = -(((h/w) * 100)-100)/2; //math the negative margin
-                    $(pic).css('margin-top', '%');//m + '%');    
-                }else if(w > h){ 
-                    // pic is landscape
-                    $(pic).addClass('landscape'); 
-                    var m = -(((w/h) * 100)-100)/2;  //math the negative margin
-                    $(pic).css('margin-left', m + '%');
-                }else {
-                    // pic is square
-                    $(pic).addClass('square');
-                }
-            }
-        </script>
 
     </head>
     <body>
-            <nav>
-                <a href="../index.html" id="logo">KYUNGHWAN SUL</a>
-                <a href="../about.html" id="about">ABOUT</a>
-                <a href="../index.html" id="projects">PROJECTS</a>
-            </nav>
+        <nav>
+            <a href="../index.html" id="logo">KYUNGHWAN SUL</a>
+            <a href="../about.html" id="about">ABOUT</a>
+            <a href="../index.html" id="projects">PROJECTS</a>
+        </nav>
 
-            <div id="pages">
-                <div id="left">
-                    <h2>Cloudus 365</h2><br>
-                    <p>Cloudus 365 is a casual runner game with 360 degree rotation.</p><br> 
-                    <p>Class Project (Group of 3) <br>September, 2017 ~ December, 2017</p><br>
-                    <p>Participated as a game designer and sub-developer actively engaging in game design, coding, audio editing process. Uploaded to Google Play Store with attached Google Play Services and Ad Mob advertisement.</p><br>
-                    <p>link to: <a href="https://play.google.com/store/apps/details?id=com.ALittlePlanetGames.Cloudus365">Cloudus 365 - Google Play</a></p><br>
-                    <a href="Cloudus 365.pdf">View Design Document</a><br><br>
+        <div id="pages">
+            <div id="left">
+                <h2>Cloudus 365</h2><br>
+                <p>Cloudus 365 is a casual runner game with 360 degree rotation.</p><br> 
+                <p>Class Project (Group of 3) <br>September, 2017 ~ December, 2017</p><br>
+                <p>Participated as a game designer and sub-developer actively engaging in game design, coding, audio editing process. Uploaded to Google Play Store with attached Google Play Services and Ad Mob advertisement.</p><br>
+                <p>link to: <a href="https://play.google.com/store/apps/details?id=com.ALittlePlanetGames.Cloudus365">Cloudus 365 - Google Play</a></p><br>
+                <a href="Cloudus 365.pdf">View Design Document</a><br><br>
 
-                    <h2>Objective</h2><br>
-                    <p>Avoid obstacles(black) and survive as long as possible. Tap to jump.</p><br>
-                    <h2>Audio Design</h2><br>
-                    <p>Background Music</p>
-                    <audio controls source src="audioProject.wav" type="audio/wav"></audio><br>
-                    <p>Button Click</p>
-                    <audio controls source src="button.wav" type="audio/wav"></audio><br>
-                    <p>Hit</p>
-                    <audio controls source src="hit.wav" type="audio/wav"></audio><br>
-                    <p>Hurt</p>
-                    <audio controls source src="Hurt.mp3" type="audio/wav"></audio><br>
-                    <p>Jump</p>
-                    <audio controls source src="jump%201.wav" type="audio/wav"></audio><br>
-                    <p>Jump 2</p>
-                    <audio controls source src="Jump.wav" type="audio/wav"></audio><br>
-                    
-                </div>
-                <div id="right">
-                    
-                    <iframe src="playable/index.html" style="border:0px #000000 none;" name="Cloudus 365" scrolling="no" frameborder="1" height="300px" width="480px"></iframe>
-               
-                    
+                <h2>Objective</h2><br>
+                <p>Avoid obstacles(black) and survive as long as possible. Tap to jump.</p><br>
+                <h2>Audio Design</h2><br>
+                <p>Background Music</p>
+                <audio controls source src="audioProject.wav" type="audio/wav"></audio><br>
+                <p>Button Click</p>
+                <audio controls source src="button.wav" type="audio/wav"></audio><br>
+                <p>Hit</p>
+                <audio controls source src="hit.wav" type="audio/wav"></audio><br>
+                <p>Hurt</p>
+                <audio controls source src="Hurt.mp3" type="audio/wav"></audio><br>
+                <p>Jump</p>
+                <audio controls source src="jump%201.wav" type="audio/wav"></audio><br>
+                <p>Jump 2</p>
+                <audio controls source src="Jump.wav" type="audio/wav"></audio><br>
 
-                </div>
             </div>
+            <div id="right">
+                <canvas id="unity-canvas" style="width: 480px; height: 300px; background: #231F20"></canvas>
+                <script src="Build/Build2.loader.js"></script>
+                <script>
+                    createUnityInstance(document.querySelector("#unity-canvas"), {
+                        dataUrl: "Build/Build2.data.gz",
+                        frameworkUrl: "Build/Build2.framework.js.gz",
+                        codeUrl: "Build/Build2.wasm.gz",
+                        streamingAssetsUrl: "StreamingAssets",
+                        companyName: "Kyunghwan Sul",
+                        productName: "Cloudus 365",
+                        productVersion: "1.1",
+                    });
+                </script>
+            </div>
+        </div>
         <footer>
             <a href="https://www.facebook.com/kyunghwan.sul"><img src='../branding/fbLogo.png'></a>
             <a href="https://www.linkedin.com/in/kyunghwan-sul-11939597/"><img src='../branding/lnLogo.png'>
-        </footer>
-    </body>
-</html>
+                </footer>
+            </body>
+        </html>
 
