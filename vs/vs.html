@@ -2,11 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Kyunghwan's Portfolio</title>
         <link rel="stylesheet" type="text/css" href="../style.css"/>
         <meta name="viewport" content="width=device-width, minimum-scale=1.0"/>
-        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-        <script src="https://www.w3schools.com/lib/w3.js"></script>
 
     </head>
     <body>
@@ -32,17 +31,28 @@
                 <p>link to: <a href="https://play.google.com/store/apps/details?id=com.Sul.VersusSketches">Versus Sketches - Google Play</a></p><br>
                 <br>
                 <h2>Experience</h2><br>
-                <h3>Always start with a design document**</h3><br>
-                <p>Versus Sketches is a shoot 'em up game that I've made using Unity as a personal project.<br><br>Started off planning on making a simple game so I decided to skip the process of making a design document, which was a very dumb decision. The project took a month to finish, which could've been done much earlier if I had it organized. Eventually, I had to get rid of all unnecessary ideas and assets and focus more on 'simplicity' as I have planned at the beginning.<br><br> 
-                    I took my time on deciding the line between what is simple and what is unfinished. Possible future addtions are 'pause in game' and a 'popup to ask if player wants to exit game'. All artwork was done in Inkscape and since I am not a great artist I decided to go with the theme of sketches.<br><br>
-        
+                <p>Always start with a design document**</p><br>
+                <p>Versus Sketches is a shoot 'em up game that I've made using Unity.<br><br>
+                    Started off planning on making a simple game so I decided to skip the process of making a design document, which was a very dumb decision. The project took a month to finish, which could've been done much earlier if I had it organized. Eventually, I had to get rid of all unnecessary ideas and assets and focus more on 'simplicity' as I have planned at the beginning.<br><br> 
+                    I took my time on deciding the line between what is simple and what is unfinished. Possible future addtions are 'pause in game' and a 'popup to ask if player wants to exit game'. All artwork was done in Inkscape.<br><br>
+
                 </p>
 
             </div>
             <div id="right">
-                <iframe src="playable/index.html" style="border:0px #000000 none;" name="Versus Sketches" scrolling="no" frameborder="1" height="600px" width="360px"></iframe>
-
-
+                <canvas id="unity-canvas" style="width: 360px; height: 600px; background: #231F20"></canvas>
+                <script src="Build/WebGL.loader.js"></script>
+                <script>
+                    createUnityInstance(document.querySelector("#unity-canvas"), {
+                        dataUrl: "Build/WebGL.data",
+                        frameworkUrl: "Build/WebGL.framework.js",
+                        codeUrl: "Build/WebGL.wasm",
+                        streamingAssetsUrl: "StreamingAssets",
+                        companyName: "Sul",
+                        productName: "Versus Sketches",
+                        productVersion: "0.1",
+                    });
+                </script>
             </div>
         </div>
         <footer>
