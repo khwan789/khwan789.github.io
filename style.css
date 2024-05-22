@@ -1,9 +1,37 @@
 * { margin: 0; }
 html,body{ height: 100%; }
 body{
-    background-color: white;
+    margin: 0 auto;
+    width : 70%;
+    background-color: #EFEFEF;
     text-align: center;
     font-family: myFont;
+}
+
+#title{ 
+    width: 100%; 
+    overflow: auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-bottom: 3px solid orange;]
+}
+#title h2{
+    padding-top: 0;
+}
+#title a{
+    float: right;
+    padding-right: 2%;
+}
+
+#title h1, h2, h3{
+    text-decoration: none; float: left; color: black; padding-left: 5%; padding-right: 5%; clear: both;
+}
+h2{
+    padding-top: 2%;
+}
+
+h4{
+    padding-bottom: 1%;
 }
 
 /*navigation bar*/
@@ -11,42 +39,67 @@ body{
 nav{ 
     width: 100%; 
     overflow: auto;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    border-bottom: 0.5px solid lightgray;]
+    text-align: left;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
-nav a{ text-decoration: none; font-size: 1.3em;}
-
-#logo{ float: left; color: black; padding-left: 10%; font-weight: bold;}
-#projects{ float: right; padding-right: 50px; color: black; }
-#projects:hover{ color: mediumvioletred; }
-#about{ float: right; color: gray; padding-right: 10%; }
-#about:hover{ color: mediumvioletred; }
-
-p, a{
-    font-size: 1.3em;
+nav a{
+    text-decoration: none;
+    color: black;
+    padding-left: 5%;
+    padding-right: %;
+    font-size: 1.2em;
 }
-p a{
-    font-size: 1em;
+nav a:hover{
+    color: orange;
+}
+
+p{
+    text-decoration: none; 
+    width: 90%;
+    float: left; 
+    color: black; 
+    padding-left: 5%; 
+    padding-right: 5%; 
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: justify;
+    font-size: 1.2em;
+}
+
+
+#intro{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+
+#insideBody{
+    background-color: white;
+    
+}
+#insideBody h1{
+    width: 90%;
+    display: inline-block;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-bottom: 3px solid orange;]
+    
 }
 
 /*main projects*/
 #main{
-    width: 70%;
-    display: inline-block;    
-    margin-left: auto;
-    margin-right: auto;
-    text-align: justify;
-    text-align-last: justify;
+    width: 100%;
+    margin: 0 auto;
+    display: inline-block;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 .profile-image { visibility: hidden; }
 .profile-image-wrap { 
-    width: 20vw;
-    height: 20vw;
-    margin-bottom: 3%;
+    width: 60%;
     display: inline-block;
-    overflow: hidden; 
 }
 .profile-image-wrap img.square { visibility: visible; width: 100%; }
 .profile-image-wrap img.portrait { visibility: visible; width: 100%; height: auto; }
@@ -56,22 +109,17 @@ p a{
     opacity: 0.8;
 }
 
-h1{
-    width: 80%;
-    font-size: 1.5em;
-    margin: auto;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    text-align: left;
-}
+
 
 #other{
     margin: auto;
     text-align: center;
+    padding-bottom: 3%;
 }
 #other a{
     float: left;
     padding-left: 10%;
+    padding-right: 10%;
     padding-bottom: 3%;
     text-decoration: none;
     color: black;
@@ -111,17 +159,17 @@ video{
     float:right;
     padding-bottom: 3%;
     padding-left: 5%;
+    padding-right: 5%;
 }
 
 /*footer - social network links*/
 footer{
+    background-color: gray;
+    overflow: auto;
     width: 100%;
     text-align: center;
     padding-top: 3%;
     padding-bottom: 3%;
-    border-top: 0.5px solid lightgray;
-    margin: auto;
-    margin-top: 5%;
 }
 
 footer a{
