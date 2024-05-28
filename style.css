@@ -101,13 +101,19 @@ p{
     width: 60%;
     display: inline-block;
 }
+.profile-image:hover{
+    opacity: 0.8;
+}
 .profile-image-wrap img.square { visibility: visible; width: 100%; }
 .profile-image-wrap img.portrait { visibility: visible; width: 100%; height: auto; }
 .profile-image-wrap img.landscape { visibility: visible; height: 100%; width: auto; }
 
-#main img:hover{
-    opacity: 0.8;
+.explanation-image { 
+    width: 80%;
+    display: inline-block;
 }
+
+
 
 
 
