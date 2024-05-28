@@ -1,5 +1,4 @@
 * { margin: 0; }
-html,body{ height: 100%; }
 body{
     margin: 0 auto;
     width : 70%;
@@ -37,7 +36,7 @@ h4{
 /*navigation bar*/
 /*don't need to touch unless adding more menus*/
 nav{ 
-    width: 100%; 
+    width: 95%; 
     overflow: auto;
     text-align: left;
     padding-top: 2%;
@@ -47,8 +46,8 @@ nav a{
     text-decoration: none;
     color: black;
     padding-left: 5%;
-    padding-right: %;
     font-size: 1.2em;
+    letter-spacing: 5%;
 }
 nav a:hover{
     color: orange;
@@ -106,7 +105,7 @@ p{
 }
 .profile-image-wrap img.square { visibility: visible; width: 100%; }
 .profile-image-wrap img.portrait { visibility: visible; width: 100%; height: auto; }
-.profile-image-wrap img.landscape { visibility: visible; height: 100%; width: auto; }
+.profile-image-wrap img.landscape { visibility: visible; width: auto; }
 
 .explanation-image { 
     width: 70%;
