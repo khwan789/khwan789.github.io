@@ -146,12 +146,12 @@ p{
     padding-top: 3%;
 }
 #left{
-    width: 50%;
+    width: 70%;
     float: left;
     text-align: left;
 }
 #right{
-    width: 50%;
+    width: 30%;
     float: right;
 }
 video{
