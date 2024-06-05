@@ -6,16 +6,15 @@
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <meta name="viewport" content="width=device-width, minimum-scale=1.0"/>
         <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-
+        <script src="myScript.js"></script>
         <script>
             'use strict';
 
             window.onload = init;
 
-
-
             function init(){
                 cropProfileImage('img.profile-image');
+                setDefaultLanguage();
             }
 
             function cropProfileImage(pic){
@@ -45,6 +44,43 @@
                     $(pic).addClass('square');
                 }
             }
+            
+            function setDefaultLanguage(){
+                var kor = document.getElementById("korean");
+                var eng = document.getElementById("english");
+                var button = document.getElementById("langButton");
+                var inValue = window.localStorage.getItem("language");
+                
+                if(inValue === null || inValue === "english"){
+                    kor.style.display = "none";
+                    button.innerHTML  = "한국어";
+                    localStorage.setItem("language","english");
+                }else {
+                    eng.style.display = "none";
+                    button.innerHTML  = "English";
+                    localStorage.setItem("language","korean");
+                }
+            }
+            
+            function changeLanguage() {
+                var kor = document.getElementById("korean");
+                var eng = document.getElementById("english");
+                var button = document.getElementById("langButton")
+                
+                if(kor.style.display === "none"){
+                    kor.style.display = "block";
+                    eng.style.display = "none";
+                    button.innerHTML  = "English";
+                    localStorage.setItem("language","korean");
+                }
+                else{
+                    kor.style.display = "none";
+                    eng.style.display = "block";
+                    button.innerHTML  = "한국어";
+                    localStorage.setItem("language","english");
+                }
+            }
+            
         </script>
 
     </head>
@@ -55,6 +91,7 @@
             <h2 style="color: gray;">Game Designer</h2>
             <a href="https://www.facebook.com/kyunghwan.sul"><img src='branding/fbLogo.png'></a>
             <a href="https://www.linkedin.com/in/kyunghwan-sul-11939597/"><img src='branding/lnLogo.png'></a>
+            <button id="langButton" onclick="changeLanguage()">English</button>
         </div>
                 
         <nav>
@@ -63,27 +100,54 @@
         </nav>
         
         <div id="insideBody">
-            <div id="intro">
-                <h2 style="color: orange;">Welcome to my portfolio!</h2>
-                <p>I am a game designer with over three years of experience. My main areas of focus include battle mechanics, level design, and event design. I have a strong passion for crafting compelling and immersive gaming experiences that engage players and enhance gameplay. I am currently seeking a new opportunity where I can bring my creativity and skills to a dynamic team and contribute to the development of innovative games.</p>
-            </div>
+            <section id="english">
+                <div id="intro">
+                    <h2 style="color: orange;">Welcome to my portfolio!</h2>
+                    <p>I am a game designer with over three years of experience. I have a strong passion for crafting compelling and immersive gaming experiences that engage players and enhance gameplay. I am currently seeking a new opportunity where I can bring my creativity and skills to a dynamic team and contribute to the development of innovative games.</p>
+                </div>
 
-            <h1 style="color: orange;">Professional Projects</h1>
+                <h1 style="color: orange;">Professional Projects</h1>
+
+                <div id="intro">
+                    <h2 style="color: orange;">Puzzle Monsters</h2>
+                    <p>Game Designer at Puzzle Monsters from 2020 ~ 2024.</p>
+                </div>
+
+                <div id="main">
+                    <a href="puzzlemonsters/idleNinja/idleNinja.html"><img class="profile-image" src="puzzlemonsters/ninja_idle.png"></a>
+                    <h4 style="color: orange; font-size: 1.2em;" >Idle Ninja Online</h4>
+                    <br>
+                    <a href="puzzlemonsters/ninjaSurvivor/ninjaSurvivor.html"><img class="profile-image" src="puzzlemonsters/ninja_survivors.png"></a>
+                    <h4 style="color: orange; font-size: 1.2em;" >Ninja Survivors Online</h4>
+                     <br>
+                </div>
+            </section>
             
-            <div id="intro">
-                <h2 style="color: orange;">Puzzle Monsters</h2>
-                <p>Game Designer at Puzzle Monsters from 2020 ~ 2024.</p>
-            </div>
+            <section id="korean">
+                <div id="intro">
+                    <h2 style="color: orange;">제 포트폴리오에 오신것을 환영합니다!</h2>
+                    <p>저는 3년 이상의 경험을 가진 게임 기획자입니다. 저는 플레이어를 매료시키고 게임 플레이를 향상시키는 매력적이고 몰입감 있는 게임 경험을 만드는 데 큰 열정을 가지고 있습니다. 저의 경험과 기술을 역동적인 팀에 가져와 혁신적인 게임 개발에 기여할 수 있는 새로운 기회를 찾고 있습니다.</p>
+                </div>
 
-            <div id="main">
-                <a href="puzzlemonsters/idleNinja/idleNinja.html"><img class="profile-image" src="puzzlemonsters/ninja_idle.png"></a>
-                <h4 style="color: orange; font-size: 1.2em;" >Idle Ninja Online</h4>
-                <br>
-                <a href="puzzlemonsters/ninjaSurvivor/ninjaSurvivor.html"><img class="profile-image" src="puzzlemonsters/ninja_survivors.png"></a>
-                <h4 style="color: orange; font-size: 1.2em;" >Ninja Survivors Online</h4>
-                 <br>
-            </div>
+                <h1 style="color: orange;">Professional Projects</h1>
+
+                <div id="intro">
+                    <h2 style="color: orange;">Puzzle Monsters</h2>
+                    <p>2020년부터 2024년까지 퍼즐몬스터즈에서 게임 기획자로 근무.</p>
+                </div>
+
+                <div id="main">
+                    <a href="puzzlemonsters/idleNinja/idleNinja.html"><img class="profile-image" src="puzzlemonsters/ninja_idle.png"></a>
+                    <h4 style="color: orange; font-size: 1.2em;" >닌자 키우기 온라인</h4>
+                    <br>
+                    <a href="puzzlemonsters/ninjaSurvivor/ninjaSurvivor.html"><img class="profile-image" src="puzzlemonsters/ninja_survivors.png"></a>
+                    <h4 style="color: orange; font-size: 1.2em;" >닌자 서바이벌 온라인</h4>
+                     <br>
+                </div>
+            </section>
         </div>
+        
+        
         <footer></footer>
     </body>
 </html>

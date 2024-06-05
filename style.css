@@ -25,6 +25,14 @@ body{
 #title h1, h2, h3{
     text-decoration: none; float: left; color: black; padding-left: 5%; padding-right: 5%; clear: both;
 }
+
+#langButton{
+    float: right;
+    margin-right: 2%;
+    width: 10%;
+    height: 29px;
+}
+
 h2{
     padding-top: 2%;
 }
@@ -111,10 +119,6 @@ p{
     width: 70%;
     display: inline-block;
 }
-
-
-
-
 
 #other{
     margin: auto;

@@ -8,13 +8,61 @@
         <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="https://www.w3schools.com/lib/w3.js"></script>
 
+        <script>
+            'use strict';
+
+            window.onload = init;
+
+            function init(){
+                setDefaultLanguage();
+            }
+
+            function setDefaultLanguage(){
+                var kor = document.getElementById("korean");
+                var eng = document.getElementById("english");
+                var button = document.getElementById("langButton");
+                var inValue = window.localStorage.getItem("language");
+                
+                if(inValue === null || inValue === "english"){
+                    kor.style.display = "none";
+                    button.innerHTML  = "한국어";
+                    localStorage.setItem("language","english");
+                }else {
+                    eng.style.display = "none";
+                    button.innerHTML  = "English";
+                    localStorage.setItem("language","korean");
+                }
+            }
+            
+            function changeLanguage() {
+                var kor = document.getElementById("korean");
+                var eng = document.getElementById("english");
+                var button = document.getElementById("langButton")
+                
+                if(kor.style.display === "none"){
+                    kor.style.display = "block";
+                    eng.style.display = "none";
+                    button.innerHTML  = "English";
+                    localStorage.setItem("language","korean");
+                }
+                else{
+                    kor.style.display = "none";
+                    eng.style.display = "block";
+                    button.innerHTML  = "한국어";
+                    localStorage.setItem("language","english");
+                }
+            }
+            
+        </script>
+        
     </head>
     <body>
         <div id="title">
-            <h1  >KYUNGHWAN SUL</h1>
+            <h1>KYUNGHWAN SUL</h1>
             <h2 style="color: gray;">Game Designer</h2>
             <a href="https://www.facebook.com/kyunghwan.sul"><img src='../../branding/fbLogo.png'></a>
             <a href="https://www.linkedin.com/in/kyunghwan-sul-11939597/"><img src='../../branding/lnLogo.png'></a>
+            <button id="langButton" onclick="changeLanguage()">English</button>
         </div>
                 
         <nav>
@@ -23,61 +71,119 @@
         </nav>
         
         <div id="insideBody">
-
-            <h1 style="color: orange;">Idle Ninja Online</h1>
-
-            <div id="intro">
-                <h2 style="color: orange;">Game Designer</h2>
-                <p>"Idle Ninja Online" has been live on the Google Play Store and Apple App Store since its launch in March 2020. 
-                <br>I worked as a game designer on this project until March 2024, contributing to the game's 3rd-anniversary event before leaving the company.</p>
-                <p>From the early stages of development, I was involved in various aspects of game design, including concept, content, systems, balance, and level design. Post-launch, I focused on content and event design to further expand the game. Despite my initial inexperience as a new designer, this project provided me with invaluable insights and experience.
-                </p>
-            </div>
             
-            <div id="main">
-                
-                <img class="explanation-image" src="field.png">
-                <p>The Field serves as the primary hunting ground where players can leave their characters to grow passively. </p>
-                <p>By benchmarking similar games, I designed each hunting ground to feature unique monsters. Although this approach aimed to enhance the game's first impression and quality, it delayed the release of new fields, making it difficult to convey the rapid growth expected in an idle game. </p>
-                <p>This issue was resolved by adding a Hard mode, introducing variations of existing monsters.
-                </p>
-                
-                <img class="explanation-image" src="fourGod.png">
-                <p>Four God Dungeons features boss battles that players encounter early in the game, offering equipment that boosts their stats upon defeating the bosses.</p>
-                <p>Although the bosses were released sequentially, they were designed to have the same stats to give players the freedom to choose their desired equipment. However, this design failed to challenge high-level players and overwhelmed new players with too many choices at once.</p>
-                <p>We addressed this by strengthening the tutorial, adding guide missions, and increasing the difficulty levels from 5 to 20 to facilitate a gradual progression. </p>
-                <p>If I were to redesign this dungeon, I would differentiate the bosses' stats and unlock the dungeons sequentially based on player growth.
-                </p>
-                
-                <img class="explanation-image" src="shutenDoji.png">
-                <p>Designed for high-level players, where players can obtain the "Ring" equipment.</p>
-                <p>Shuten Doji and Ibaraki Doji, two yokai bosses, were designed to fight cooperatively against the players, distinguishing them from previous bosses. Special attention was given to the bosses' skills and patterns to provide a reasonable combat experience.</p>
-                <p>I scripted the bosses to interact with each other during battle, and conducted extensive playtesting to ensure high quality.</p>
-                
-                <img class="explanation-image" src="family.png">
-                <p>To foster a sense of belonging among players, we introduced the Family (Clan) system shortly after the game's launch.</p>
-                <p>Initially, it included attendance check and family shop features, where players could use clan currency earned only through attendance. Later, family dungeon was added, allowing players to earn more clan currency, which made it challenging to introduce meaningful items in the clan shop.</p>
-                <p>Although I planned a comprehensive renewal of the clan system and dungeons, I handed over these responsibilities to another designer before leaving the company.</p>
-                 
-                <img class="explanation-image" src="event.png">
-                <p>Over three years, I planned various events, with the last being "Rise of the Blue Dragon," which generated $292,000 in revenue during the event period. (₩1300 = $1)</p>
-                <p>This event introduced the game's first Ultimate-grade Blue Dragon Tomo (Pet). Players had to level up the Blue Dragon and use items to promote it. To drive revenue, we separated the items needed for leveling and promotion, creating growth hurdles. However, the EXP points required for leveling were set too high, causing frustration rather than challenge.</p>
-                <p>We alleviated this issue by adding more sources to gain EXP items.</p>
-                <p>If I were to redesign this event, I would make leveling easier while increasing the difficulty of collecting promotion materials.</p>
+            <section id="english">
+                <h1 style="color: orange;">Idle Ninja Online</h1>
+
+                <div id="intro">
+                    <h2 style="color: orange;">Game Designer</h2>
+                    <p>"Idle Ninja Online" has been live on the Google Play Store and Apple App Store since its launch in March 2020. 
+                    <br>I worked as a game designer on this project until March 2024, contributing to the game's 3rd-anniversary event before leaving the company.</p>
+                    <p>From the early stages of development, I was involved in various aspects of game design, including concept, content, systems, balance, and level design. Post-launch, I focused on content and event design to further expand the game. Despite my initial inexperience as a new designer, this project provided me with invaluable insights and experience.
+                    </p>
+                </div>
+
+                <div id="main">
+
+                    <img class="explanation-image" src="field.png">
+                    <p>The Field serves as the primary hunting ground where players can leave their characters to grow passively. </p>
+                    <p>By benchmarking similar games, I designed each hunting ground to feature unique monsters. Although this approach aimed to enhance the game's first impression and quality, it delayed the release of new fields, making it difficult to convey the rapid growth expected in an idle game. </p>
+                    <p>This issue was resolved by adding a Hard mode, introducing variations of existing monsters.
+                    </p>
+
+                    <img class="explanation-image" src="fourGod.png">
+                    <p>Four God Dungeons features boss battles that players encounter early in the game, offering equipment that boosts their stats upon defeating the bosses.</p>
+                    <p>Although the bosses were released sequentially, they were designed to have the same stats to give players the freedom to choose their desired equipment. However, this design failed to challenge high-level players and overwhelmed new players with too many choices at once.</p>
+                    <p>We addressed this by strengthening the tutorial, adding guide missions, and increasing the difficulty levels from 5 to 20 to facilitate a gradual progression. </p>
+                    <p>If I were to redesign this dungeon, I would differentiate the bosses' stats and unlock the dungeons sequentially based on player growth.
+                    </p>
+
+                    <img class="explanation-image" src="shutenDoji.png">
+                    <p>Designed for high-level players, where players can obtain the "Ring" equipment.</p>
+                    <p>Shuten Doji and Ibaraki Doji, two yokai bosses, were designed to fight cooperatively against the players, distinguishing them from previous bosses. Special attention was given to the bosses' skills and patterns to provide a reasonable combat experience.</p>
+                    <p>I scripted the bosses to interact with each other during battle, and conducted extensive playtesting to ensure high quality.</p>
+
+                    <img class="explanation-image" src="family.png">
+                    <p>To foster a sense of belonging among players, we introduced the Family (Clan) system shortly after the game's launch.</p>
+                    <p>Initially, it included attendance check and family shop features, where players could use clan currency earned only through attendance. Later, family dungeon was added, allowing players to earn more clan currency, which made it challenging to introduce meaningful items in the clan shop.</p>
+                    <p>Although I planned a comprehensive renewal of the clan system and dungeons, I handed over these responsibilities to another designer before leaving the company.</p>
+
+                    <img class="explanation-image" src="event.png">
+                    <p>Over three years, I planned various events, with the last being "Rise of the Blue Dragon," which generated $292,000 in revenue during the event period. (₩1300 = $1)</p>
+                    <p>This event introduced the game's first Ultimate-grade Blue Dragon Tomo (Pet). Players had to level up the Blue Dragon and use items to promote it. To drive revenue, we separated the items needed for leveling and promotion, creating growth hurdles. However, the EXP points required for leveling were set too high, causing frustration rather than challenge.</p>
+                    <p>We alleviated this issue by adding more sources to gain EXP items.</p>
+                    <p>If I were to redesign this event, I would make leveling easier while increasing the difficulty of collecting promotion materials.</p>
+
+                    <img class="explanation-image" src="shuriken.png">
+                    <p>Ninjas throw shurikens and activate skills to damage the enemies. Ninjas can equip up to 5 shurikens based on their preferred combinations.</p>
+                    <p>I have contributed to designing the shurikens, from concept to skill mechanics. I have Worked with artists, programmers, and others to bring powerful shurikens live to the ninjas.</p>  
+
+                    <img class="explanation-image" src="concept.png">
+                    <p>• Concept design of equipment: Wrist Guard, Circlet, Armor, and Boots.
+                    <br>• Concept design and implementation of Tomos (Pet), including skills.
+                    <br>• Equipment Skin system design and concept design for skins provided through events.
+                    <br>• Concept design of 200+ character costumes provided through events.
+                    </p>
+
+                    <h1 style="color: orange;">And Many More!</h1>
+                </div>
+            </section>
             
-                <img class="explanation-image" src="shuriken.png">
-                <p>Ninjas throw shurikens and activate skills to damage the enemies. Ninjas can equip up to 5 shurikens based on their preferred combinations.</p>
-                <p>I have contributed to designing the shurikens, from concept to skill mechanics. I have Worked with artists, programmers, and others to bring powerful shurikens live to the ninjas.</p>  
-                
-                <img class="explanation-image" src="concept.png">
-                <p>• Concept design of equipment: Wrist Guard, Circlet, Armor, and Boots.
-                <br>• Concept design and implementation of Tomos (Pet), including skills.
-                <br>• Equipment Skin system design and concept design for skins provided through events.
-                <br>• Concept design of 200+ character costumes provided through events.
-                </p>
-                
-                <h1 style="color: orange;">And Many More!</h1>
-            </div>
+            <section id="korean">
+                <h1 style="color: orange;">닌자 키우기 온라인</h1>
+
+                <div id="intro">
+                    <h2 style="color: orange;">게임 기획</h2>
+                    <p>"닌자 키우기 온라인"은 출시 시점인 2020년 3월부터 현재까지 라이브 서비스 중이며 Google Play Store 및 Apple App Store를 통해 만나 볼 수 있으며, 저는 3주년 이벤트인 2024년 3월까지 기획자로써 일을 한 후 퇴사하였습니다.</p>
+                    <p>게임 제작 초기부터 참여하여 콘셉트, 콘텐츠, 시스템, 밸런스, 레벨 디자인 등 게임 전반의 걸쳐 기획 및 라이브 서비스까지 진행하였습니다. 출시 이후부터는 콘텐츠 및 이벤트 기획에 주력하여 게임의 확장에 집중하였습니다. 신입 기획자로서 부족한 점도 많았지만 해당 프로젝트를 출시하고 운영함으로써 다양한 인사이트를 획득할 수 있는 경험이었습니다.
+                    </p>
+                </div>
+
+                <div id="main">
+
+                    <img class="explanation-image" src="field.png">
+                    <p>필드는 플레이어들이 캐릭터를 방치하여 성장할 수 있는 주 사냥터입니다.</p>
+                    <p>레퍼런스 삼았던 게임을 벤치마킹하여 각 사냥터마다 새로운 몬스터를 만나 볼 수 있도록 기획하였습니다. 해당 방식으로 게임의 첫인상 및 퀄리티를 올리고자 하였지만 새로운 필드가 나오는 데 있어 다소 시간이 걸려 플레이어들에게 Idle 게임으로서 제공해야 할 빠른 성장의 느낌을 주는데 어려움이 있었습니다. </p>
+                    <p>해당 문제점은 Hard 난이도를 추가하여 기존 몬스터들의 variation을 추가하여 해결하였습니다.
+                    </p>
+
+                    <img class="explanation-image" src="fourGod.png">
+                    <p>플레이어들이 게임 초반에 만나는 보스 던전들로써 각 보스들을 처치하면 스펙을 올릴 수 있는 장비들을 획득할 수 있습니다.</p>
+                    <p>보스들은 일정 시간을 두고 순차적으로 출시되었지만 플레이어들에게 자신이 얻고자 하는 장비를 선택해서 얻을 수 있는 선택의 자유를 주고자 동일한 스펙으로 출시가 되었습니다. 다만 출시 시점에 이미 강해져버린 상위 구간 플레이어들에게는 성장 허들로서 동작하지 못하였고 신규 유저들에게는 한 번에 많은 선택지가 주어지며 오히려 게임 진행에 대한 혼란을 야기했습니다.</p>
+                    <p>업데이트를 통해 튜토리얼을 강화하고 가이드 임무 추가 및각 보스들의 난이도를 5개에서 20개로 증가하여 계단식 성장이 가능하도록 하였습니다.</p>
+                    <p>해당 던전을 다시 기획하게 된다면 모든 보스들의 스펙을 다르게 하고 게임 내에서 플레이어 성장도에 따라 순차적으로 던전들이 해금되도록 할 것입니다.
+                    </p>
+
+                    <img class="explanation-image" src="shutenDoji.png">
+                    <p>상위 구간 플레이어들을 대상으로 "반지" 장비를 얻을 수 있는 던전으로 기획되었습니다.</p>
+                    <p>슈텐도지와 이바라키도지 요괴를 콘셉트로써 기존 보스들과는 차별화된 두 마리의 보스가 협동하여 플레이어와 전투하도록 제작하였습니다. 두 마리의 보스와 전투하는 만큼 플레이어들에게 합리적인 전투 경험을 제공하고자 보스들의 스킬 및 패턴에 특히 많은 신경을 쓴 던전입니다.</p>
+                    <p>스크립팅을 통해 보스들이 상호작용을 할 수 있도록 하였고 많은 플레이 테스트를 통해 완성도를 높였습니다.</p>
+
+                    <img class="explanation-image" src="family.png">
+                    <p>게임 출시 초반 시점에 플레이어들에게 게임의 소속감을 높이기 위해 클랜 시스템인 가문을 추가하였습니다.</p>
+                    <p>출석 체크 및 가문 상점만 추가된 상황에서 출석 체크로 얻은 가문 재화만으로도 상점에서 사용할 수 있게 하고자 하였습니다. 이후 가문 던전이 추가되며 플레이어들은 더 많은 가문 재화를 획득할 수 있게 되었고 가문 재화의 가치가 높은 시점에서 가문 상점에서는 유의미한 아이템의 추가가 어려웠습니다.</p>
+                    <p>가문 시스템 및 던전에 대한 전반적인 리뉴얼을 계획하였으나 다른 기획자에게 인수인계 후 나오게 되었습니다.</p>
+
+                    <img class="explanation-image" src="event.png">
+                    <p>3년의 시간 동안 다양한 이벤트를 기획하였습니다. 가장 마지막으로 기획한 이벤트인 "Rise of the Blue Dragon"은 이벤트 기간 동안 ₩3억8천의 매출을 달성하였습니다.</p>
+                    <p>게임 최초 초월 등급 청룡 소환수가 추가되었고 이벤트 기간 동안 플레이어들은 청룡의 레벨을 올리고 아이템을 사용하여 승급을 시켜야 했습니다. 청룡의 레벨을 올릴 수 있는 아이템과 승급 아이템을 분리하고 성장에 허들을 주어 매출을 견인하고자 하였습니다. 다만 청룡의 레벨을 올리는 데에 필요한 경험치를 너무 높게 잡아 플레이어들이 허들보다는 스트레스로써 작용하는 문제가 있었습니다.</p>
+                    <p>청룡의 레벨을 올릴 수 있는 아이템의 수급처를 추가하여 해당 현상을 완화하였습니다.</p>
+                    <p>해당 이벤트를 다시 기획하게 된다면 청룡 레벨 업의 허들을 보다 쉽게 하되 승급 재료를 모으는 허들을 강화할 것입니다.</p>
+
+                    <img class="explanation-image" src="shuriken.png">
+                    <p>닌자는 표창을 던지고 스킬을 활성화하여 적에게 피해를 입힐 수 있습니다. 플레이어는 선호하는 조합에 따라 최대 5개의 표창을 장착할 수 있습니다. </p>
+                    <p>저는 표창의 콘셉트부터 스킬 메커니즘 및 개발에 기여하였습니다. 표창들을 구현하고 출시하기 위해 아티스트, 프로그래머 등과 협력하였습니다.</p>
+
+                    <img class="explanation-image" src="concept.png">
+                    <p>• 장비 콘셉트 기획: 장갑, 투구, 갑옷 및 신발.
+                    <br>• 스킬을 포함한 소환수 (펫)의 콘셉트 기획 및 구현.
+                    <br>• 이벤트를 통해 제공되는 장비 스킨 시스템 기획 및 장비 스킨 콘셉트 기획.
+                    <br>• 이벤트를 통해 제공되는 200개 이상의 캐릭터 코스튬 콘셉트 기획.
+                    </p>
+
+                    <h1 style="color: orange;">And Many More!</h1>
+                </div>
+            </section>
             
             <footer>
             </footer>
