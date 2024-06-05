@@ -246,6 +246,12 @@ footer a{
         font-size: 1em;
         overflow: clip;
     }
+    .profile-image-wrap { 
+        width: 80%;
+    }
+    .explanation-image { 
+        width: 100%;
+    }
     h1{
         font-size: 1.5em;
     }
