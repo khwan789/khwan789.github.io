@@ -4,7 +4,7 @@ body{
     width : 70%;
     background-color: #EFEFEF;
     text-align: center;
-    font-family: myFont;
+    font-family: "myFont","myFontKR";
 }
 
 #title{ 
@@ -33,12 +33,29 @@ body{
     height: 29px;
 }
 
+a{
+    text-decoration: none;
+}
+
 h2{
     padding-top: 2%;
 }
 
 h4{
     padding-bottom: 1%;
+}
+
+h5{
+    text-decoration: none; 
+    width: 90%;
+    float: left; 
+    color: black; 
+    padding-left: 5%; 
+    padding-right: 5%; 
+    padding-top: 0.5%;
+    padding-bottom: 1%;
+    text-align: left;
+    font-size: 1.1em;
 }
 
 /*navigation bar*/
@@ -70,28 +87,70 @@ p{
     padding-right: 5%; 
     padding-top: 1%;
     padding-bottom: 1%;
-    text-align: justify;
-    font-size: 1.2em;
+    text-align: left;
 }
 
+
+ul{
+    width: 85%;
+    display: inline-block;
+    padding-left: 1%;
+}
+ol{
+    width: 85%;
+    display: inline-block;
+    padding-left: 1%;
+}
+dl{
+    width: 85%;
+    display: inline-block;
+    padding-left: 1%;
+    color: blue;
+    font-size: 0.9em;
+}
+
+li{
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+
+li, dd{
+    text-align: justify;
+}
+dt{
+    text-align: justify;
+    padding-top: 1%
+}
+
+#left{
+    display: inline-block;
+    width: 70%;
+}
+#right{
+    display: inline-block;
+    width: 25%;
+    float: inherit;
+}
 
 #intro{
     padding-top: 1%;
     padding-bottom: 1%;
 }
+#details{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
 
-
-#insideBody{
+.insideBody{
     background-color: white;
     
 }
-#insideBody h1{
+.insideBody h1{
     width: 90%;
     display: inline-block;
     padding-top: 2%;
     padding-bottom: 2%;
-    border-bottom: 3px solid orange;]
-    
+    border-bottom: 3px solid orange;
 }
 
 /*main projects*/
@@ -103,21 +162,22 @@ p{
     padding-bottom: 2%;
 }
 
-.profile-image { visibility: hidden; }
-.profile-image-wrap { 
-    width: 60%;
+.profile-image {  
+    width: 80%;
+}
+
+.links{
     display: inline-block;
+    width: 45%;
+    text-decoration: none;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
-.profile-image:hover{
-    opacity: 0.8;
-}
-.profile-image-wrap img.square { visibility: visible; width: 100%; }
-.profile-image-wrap img.portrait { visibility: visible; width: 100%; height: auto; }
-.profile-image-wrap img.landscape { visibility: visible; width: auto; }
 
 .explanation-image { 
-    width: 70%;
+    width: 90%;
     display: inline-block;
+    
 }
 
 #other{
@@ -155,23 +215,40 @@ p{
 #resume img{
     width: 60%;
 }
-#left{
-    width: 70%;
-    float: left;
+
+
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 2% 1% 2% 1%;
+    width: 90%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1em;
 }
-#left p{
+
+.active, .collapsible:hover {
+    background-color: #555;
+}
+
+.content {
+    display: inline-block;
+    max-height: 0;
+    width: 100%;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: white;
     margin: 0 auto;
-    padding-left: 0;
-}
-#right{
-    width: 30%;
-    float: right;
+    padding: 0;
 }
 
 video{
     width: 90%;
-    float: right;
-    padding-bottom: 3%;
+    float:inherit;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 .images{
     width: 40%;
@@ -195,11 +272,17 @@ footer a{
     float: right;
     padding-right: 1%;
 }
-
+@font-face {
+    font-family: myFontKR;
+    src: url(NanumGothicBold.ttf);
+}
 @font-face {
     font-family: myFont;
     src: url(RobotoCondensed-Regular.ttf);
 }
+
+
+
 
 /* Use a media query to add a breakpoint at 800px: */
 @media screen and (max-width: 800px) {
@@ -208,7 +291,7 @@ footer a{
         width : 100%;
         background-color: #EFEFEF;
         text-align: center;
-        font-family: myFont;
+        font-family: myFont,myFontKR;
     }
     #title{ 
         width: 100%; 

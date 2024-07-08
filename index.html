@@ -13,36 +13,8 @@
             window.onload = init;
 
             function init(){
-                cropProfileImage('img.profile-image');
                 setDefaultLanguage();
-            }
-
-            function cropProfileImage(pic){
-                var h = pic.height;
-                var w = pic.width;
-
-                //var h = $(pic).height();
-                //var w = $(pic).width();
-
-                if($(pic).parent('.profile-image-wrap').length === 0){
-                    // wrap the image in a "cropping" div
-                    $(pic).wrap('<div class="profile-image-wrap"></div>');
-                }
-
-                if(h > w){
-                    // pic is portrait
-                    $(pic).addClass('portrait');
-                    var m = -(((h/w) * 100))/2; //math the negative margin
-                    $(pic).css('margin-top', '%');//m + '%');    
-                }else if(w > h){ 
-                    // pic is landscape
-                    $(pic).addClass('landscape'); 
-                    var m = -(((w/h) * 100)-100)/2;  //math the negative margin
-                    $(pic).css('margin-left', m + '%');
-                }else {
-                    // pic is square
-                    $(pic).addClass('square');
-                }
+                collapse();
             }
             
             function setDefaultLanguage(){
@@ -81,6 +53,35 @@
                 }
             }
             
+            function collapse(){
+                var colls = document.getElementsByClassName("collapsible");
+                var dolls = document.getElementsByClassName("collapsible");
+
+                function closeAll() {
+                  for(var dol of dolls) {
+                    dol.classList.remove("active");
+                    dol.nextElementSibling.style.maxHeight = null;
+                  }
+                }
+
+                for(var col of colls) {
+                col.addEventListener("click", function() {
+
+                  var content = this.nextElementSibling;
+
+                  if (this.classList.contains("active")) {
+                    closeAll();        
+                    content.style.maxHeight = 0;
+                  } else {
+                    closeAll();
+                    this.classList.toggle("active");
+                    content.style.maxHeight = content.scrollHeight + "px";
+
+                  }
+
+                });
+                }
+            }
         </script>
 
     </head>
@@ -99,7 +100,7 @@
             <a href="about.html">About</a>
         </nav>
         
-        <div id="insideBody">
+        <div class="insideBody">
             <section id="english">
                 <div id="intro">
                     <h2 style="color: orange;">Welcome to my portfolio!</h2>
@@ -113,14 +114,17 @@
                     <p>Game Designer at Puzzle Monsters from 2020 ~ 2024.</p>
                 </div>
 
-                <div id="main">
-                    <a href="puzzlemonsters/idleNinja/idleNinja.html"><img class="profile-image" src="puzzlemonsters/ninja_idle.png"></a>
-                    <h4 style="color: orange; font-size: 1.2em;" >Idle Ninja Online</h4>
-                    <br>
-                    <a href="puzzlemonsters/ninjaSurvivor/ninjaSurvivor.html"><img class="profile-image" src="puzzlemonsters/ninja_survivors.png"></a>
+                <div id="right">
+                    <img class="profile-image" src="puzzlemonsters/ninja_survivors.png">
                     <h4 style="color: orange; font-size: 1.2em;" >Ninja Survivors Online</h4>
-                     <br>
                 </div>
+                
+                <div id="left">
+                    <img class="profile-image" src="puzzlemonsters/ninja_idle.png">
+                    <h4 style="color: orange; font-size: 1.2em;" >Idle Ninja Online</h4>
+                </div>
+                
+                <h1></h1>
             </section>
             
             <section id="korean">
@@ -134,22 +138,449 @@
 
                 <div id="intro">
                     <h2 style="color: orange;">Puzzle Monsters</h2>
-                    <p>2020년부터 2024년까지 퍼즐몬스터즈에서 게임 기획자로 근무.</p>
-                </div>
+                    
+                    <p>닌자 키우기와 닌자 서바이벌의 개발 초창기부터 출시 후 라이브 서비스까지 기획자로 참여하였습니다.</p>
+                    
+                    <p>닌자 키우기는 2021년 출시된 Web3 기반 모바일 게임으로, P2E 모델을 도입하여 NINKY 코인 및 "이나리" NFT 출시를 통해 한국 양대마켓 모바일 스토어 1위를 달성하였고. 북미, 일본 등 글로벌 서비스를 통해 100억 이상의 매출을 달성했습니다.</p>
+                    
+                    <div class="links">
+                        <a href="https://play.google.com/store/apps/details?id=com.puzzlemonsters.growninja&hl=en" target="_blank">
+                        <img class="profile-image" src="puzzlemonsters/ninja_idle.png">
+                        <h4 style="color: orange;" >닌자 키우기 온라인 구글 플레이 링크</h4></a>
+                     </div>
+                    
+                     <div class="links">
+                        <a href="https://play.google.com/store/apps/details?id=com.puzzlemonsters.ninjasurvivors&hl=en" target="_blank">
+                        <img class="profile-image" src="puzzlemonsters/ninja_survivors.png">
+                        <h4 style="color: orange;" >닌자 서바이벌 온라인 구글 플레이 링크</h4></a>
+                    </div>
+                    
+                    <p><b>My Works 닌자 키우기</p></b>
+                    <ol>
+                        <li>필드 기획 및 구현</li>
+                        <ul>
+                            <li>캐릭터를 방치하여 경험치 및 장비 재료를 수급할 수 있는 사냥터.</li>
+                            <li>맵 컨셉 및 연출 기획, 필드 내 모든 몬스터 와 보스의 패턴 구현.</li>
+                        </ul>
+                        
+                        <li>보스 던전 기획 및 구현</li>
+                        <ul>
+                            <li>4대신 : 유저들의 초반 성장을 유도하는 초반 구간 장비 수급처.</li>
+                            <li>상위신 "분노의 슈텐 도지" : 최상위 필드 진입 유저 대상 던전, 반지 장비 수급처.</li>
+                            <li>보스 던전의 콘셉트 및 보스 전투 구현.</li>
+                        </ul>
+                        
+                        <li>이벤트 기획 및 구현</li>
+                        <ul>
+                            <li>이벤트 진행을 위한 기조 정립 및 할로윈, 크리스마스를 비롯한 시즈널 이벤트 진행.</li>
+                            <li>이벤트 상품 기획 및 판매를 통한 지표 개선과 매출 견인.</li>
+                        </ul>
+                       
+                        <li>가문 시스템 기획</li>
+                        <ul><li>가문 관리 기능, 가문 상점 및 가문 보스 던전을 비롯한 가문 랭킹 기획 및 구현.</li></ul>
+                        
+                        <li>콘셉트 기획</li>
+                         <ul>
+                            <li>소환수 (펫) : 이벤트를 통해 제공되는 소환수들의 콘셉트 기획 및 구현.</li>
+                            <li>코스튬 (스킨) : 이벤트를 통해 제공되는 시즈널 코스튬 콘셉트 기획 및 구현..</li>
+                            <li>장비 : 일반 장비, 상위 티어 장비, 이벤트 장비 기획 및 구현.</li>
+                        </ul>
+                    </ol>
 
-                <div id="main">
-                    <a href="puzzlemonsters/idleNinja/idleNinja.html"><img class="profile-image" src="puzzlemonsters/ninja_idle.png"></a>
-                    <h4 style="color: orange; font-size: 1.2em;" >닌자 키우기 온라인</h4>
-                    <br>
-                    <a href="puzzlemonsters/ninjaSurvivor/ninjaSurvivor.html"><img class="profile-image" src="puzzlemonsters/ninja_survivors.png"></a>
-                    <h4 style="color: orange; font-size: 1.2em;" >닌자 서바이벌 온라인</h4>
-                     <br>
+                    <p><b>My Works 닌자 서바이벌</p></b>
+                    <ol>
+                        <li>챕터 기획 및 구현</li>
+                        <ul>
+                            <li>경험치와 골드 수급의 메인 콘텐츠.</li>
+                            <li>100개 이상의 일반 챕터와 상위 난이도 챕터 기획 및 구현.</li>
+                        </ul>
+                        <li>보스 던전 기획</li>
+                        <ul>
+                            <li>주간 랭킹을 통한 멀티 플레이 경쟁 콘텐츠 제작.</li>
+                            <li>던전 시스템 기획, 레벨 디자인 및 던전 구현.</li>
+                        </ul>
+            
+                    </ol>
                 </div>
+                
+                <div id="details">
+                    <button class="collapsible">닌자 키우기 : 보스 던전 "분노의 슈텐 도지" 기획 상세</button>
+                    <div class="content">
+                        <p><b>목표</b></p>
+                        <ul><li>고레벨 유저 대상 “반지” 장비를 파밍할 수 있는 최상위 던전 제작.</li></ul>
+                        
+                        <p><b>기조</b></p>
+                        <ul>
+                            <li>최대 {4}인의 플레이어가 입장이 가능한 파티 플레이를 권장.</li>
+                            <li>자동 전투가 아닌 수동 컨트롤을 통한 전투 권장.</li>
+                        </ul>
+
+                        <p><b>의도</b></p>
+                        <ul>
+                            <li>플레이어 선택에 따라 전투의 향방이 달라지도록 하여 기존에 한마리의 보스와의 전투에서 벗어난 새로운 경험 제공.</li>
+                            <li>속성간의 유불리한 차이점이 적은 방향으로 던전 제작.</li>
+                        </ul>
+
+                        <dl>
+                            <dt>*닌자 키우기에는 직업/전직의 역할을 하는 속성표창 시스템이 존재한다.</dt>
+                            <dd>*속성에 따른 표창 덱을 구성하며 속성에 따라 단일 혹은 범위 공격이 강한 스킬을 사용한다.</dd>
+                        </dl>
+                        
+                        <p><b>방향</b></p>
+                        
+                        <ul>
+                            <li>3분의 제한시간내에 두마리의 보스 : 슈텐 도지, 이바라키 도치를 처치.</li>
+                            <li>슈텐 도지, 이바라키 도지, 그리고 5개의 텐트가 맵에 생성된다.</li>
+                            <li>슈텐 도지 우선 처치 시, 보다 약한 이바라키 도지와의 전투를 진행할 수 있으나 빠르게 처치하지 못한다면 슈텐 도지를 회복시켜 다시 전투에 참여하게 할 수 있다.</li>
+                            <li>이바라키 도지 우선 처치 시, 보다 단순한 패턴을 보유한 슈텐 도지와 전투를 진행할 수 있으나, 슈텐 도지가 페이즈 2에 돌입하게 되면서 스킬이 강화되어 피하지 못하였을경우의 리스크가 증가한다.</li>
+                            <li>전투 도중 텐트가 파괴되면 작은 도깨비들이 소환되어 전투에 참여한다. 몬스터들을 보다 효율적으로 처치하기 위해 각기 다른 속성의 표창을 보유한 플레이어들이 협력하게여 하여 멀티플레이 요소를 강화.</li>
+                        </ul>
+                        
+                        <video style="width:50%;" autoplay loop muted><source src="shutenDoji.mp4"></video>
+                    
+                        <p><b>슈텐 도지</b></p>
+                        
+                        <ul>
+                            <li>플레이어를 쫓아가며 근접 전투 진행</li>
+                            <li>이바라키 도지가 살아있는한 죽지 않는며 체력이 ‘0’이 되면 기절 상태 돌입.</li>
+                            <li>이바라키 도지가 먼저 죽으면 분노하며 페이즈 2 돌입.</li>
+                            <li>슈텐 도지의 이속이 빨라지며 스킬들이 강화된다.</li>
+                            <li>스킬 강화 : 발동 시간이 짧아지며 공격의 범위가 넓어진다.</li>
+                            <li>스킬 구성</li>
+                            <ul>
+                                <li>돌진 : 플레이어 방향으로 빠른 속도로 돌진.</li>
+                                <li>내려찍기 : 커다란 도끼를 내려찍으며 플레이어 위치에 원형 범위 공격을 가함.</li>
+                                <li>화염 방사 : 플레이어 방향으로 원뿔 모양의 화염을 내뿜는다.</li>
+                                <li>불의 손아귀 : 플레이어를 자신의 위치로 끌고 온다.</li>
+                                <li>대폭발 : 이바라키 도지를 자신의 위치로 불러들여 함께 넓은 범위의 대 폭발을 일으킨다.</li>
+                            </ul>
+                        </ul>
+                        
+                        <p><b>이바라키 도지</b></p>
+                        <ul>
+                            <li>슈텐 도지 에게서 일정 범위 이상 벗어나지 않으며 원거리 전투 진행</li>
+                            <li>플레이어가 가까워지면 다른 위치로 이동한다. </li>
+                            <li>스킬 구성</li>
+                            <ul>
+                                <li>원거리 투사체 : 느린 속도로 플레이어를 향해 날아가는 투사체를 발사함.</li>
+                                <li>밀어내기 : 플레이어가 가까워지면 바람을 날려 플레이어를 밀어낸다.</li>
+                                <li>늪지대 생성 : 플레이어 위치에 데미지를 주는 원형 장판을 생성한다.</li>
+                                <li>광역 힐 : 맵 랜덤 위치에 10개의 구체를 생성한다.</li>
+                                <li>제한 시간 내에 구체를 파괴하지 못하면 남아있는 구체 개수에 비례하여 맵 내 몬스터들의 체력을 회복한다.</li>
+                            </ul>
+                        </ul>
+                        
+                        <dl>
+                            <dd>* 슈텐 도지와 이바라키 도지의 공격을 {3}초 내에 연달아 맞으면 {1}초의 짧은 스턴이 적용된다.</dd>
+                        </dl>
+                        
+                        <p><b>도깨비 무리</b></p>
+                        
+                        <ul>
+                            <li>맵에 위치한 텐트를 파괴하면 3마리의 도깨비들이 소환된다. (총 15마리)</li>
+                            <li>플레이어를 쫓아가며 근접 전투 진행</li>
+                            <li>스킬 구성</li>
+                            <ul>
+                                <li>돌진 : 플레이어 방향으로 빠른 속도로 돌진.</li>
+                                <li>근접 공격 : 방망이를 휘두르며 전방에 피해를 가한다.</li>
+                            </ul>
+                        </ul>
+                        <h1></h1>
+                    </div>
+                    <button class="collapsible">닌자 키우기 : 설날 이벤트 "날아오르라 청룡이여" 기획 상세</button>
+                    <div class="content">
+                        <h2>이벤트 기획</h2>
+                        <ul>
+                            <li>제목 : 날아오르라 청룡이여</li>
+                            <li>기간 : 2024.02.05 ~ 2024.03.03</li>
+                            <li>목표 : 설날 기념 “청룡” 이벤트와 이후 3주년 이벤트를 연계하여 2024년 1/4분기 “닌자 키우기” 매출 증진.</li>
+                        </ul>
+                        
+                        <p><b>이벤트 기조</b></p>
+                        <ul>
+                            <li>이벤트 기간동안에만 획득 가능한 한정 아이템 제공.</li>
+                            <li>일일 임무, 특수 임무 등 게임플레이를 통해 완료 가능한 임무들로 이벤트 재화 획득.</li>
+                            <li>한정 아이템은 여러 등급으로 분류되며 최고 등급에 도달 하기 위해서는 모든 임무 완료 및 유료 상품 구매를 통한 재화 획득이 필요함.</li>
+                            <li>이벤트 교환 상점에서 남은 재화를 각종 인게임 아이템으로 교환 가능.</li>
+                        </ul>
+                        
+                        <p><b>기획 배경</b></p>
+                        <ul>
+                            <li>타겟 유저 : PU 대상 플레이어들에게 더 높은 도달 목표 제공.</li>
+                            <li>이벤트 진행 몇개월 전에 출시된 신규 서버에는 플레이어들의 성장 속도를 조절하고자 전투 소환수가 미반영된 상태.</li>
+                            <ul>
+                                <li>지원 소환수 : 플레이어에게 버프를 적용하거나 몬스터에게 디버프 적용.</li>
+                                <li>전투 소환수 : 무기 (표창)을 장착하여 함께 전투에 참여.</li>
+                            </ul>
+                            <li>기존에 이벤트에서 다수의 신등급 소환수가 출시되었었고, 신규 소환수로 제공 가능한 버프/디버프 효과가 제한적이 되어 더 이상 플레이어들에게 어필이 되지 않음.</li>
+                            <li>게임 최초로 초월 등급의 소환수 추가를 통해 기존 유저들이 획득하고자할만한 매력적인 아이템을 제공.</li>
+                            <li>초월 등급 소환수는 적에게 데미지와 디버프를 적용하는 스킬을 사용함으로 신규 서버에서 전투 소환수의 부재를 매꿔준다.</li>
+                            <li>초월 등급 소환수의 차별화를 위해 소환수의 스킬 강화 기능 및 소환 시 적용되는 추가 스탯을 적용.
+                        </ul>
+                        
+                        <img src="blueDragonSkill.gif" style="width: 512px;">
+
+                        <dl>
+                            <dt>*닌자 키우기 아이템 등급 순서</dt>
+                            <dd>[일반] > [고급] > [희귀] > [영웅] > [전설] > [신] > [초월]</dd>
+
+                            <dt>* 소환수란?</dt>
+                            <dd>플레이어와 함께 전투에 참여하거나 버프를 통해 도움을 주는 “펫”.</dd>
+                            <dd>소환수는 동일 소환수와 재료를 소모하여 최대 2회까지 더 높은 등급으로 승급 가능.</dd>
+                            <dd>최대 3마리까지 (지원 1 / 전투 2) 소환이 가능하며 소환수 컬렉션을 통해 상시 적용되는 스탯 획득 가능.</dd>
+
+                            <dt>* 코스튬이란?</dt>
+                            <dd>게임 내 캐릭터들의 외형을 변경할 수 있는 “스킨”.</dd>
+                            <dd>재료를 소모하여 획득한 코스튬을 최대 2회까지 더 높은 등급으로 승급 가능.</dd>
+                            <dd>코스튬 컬렉션을 통해 상시 적용되는 스탯 획득 가능.</dd>
+                        </dl>
+
+                        
+                        <h2>이벤트 진행</h2>
+                        <p><b>요약</b></p>
+                        <ul>
+                            <li>각종 임무들을 완료하여 이벤트 재화를 획득하고 “청룡” 소환수를 성장 시키자!</li>
+                            <li>무료로 지급되는 희귀 등급 청룡 소환수를 성장시켜 초월 등급까지 성장.</li>
+                            <li>재화를 이벤트 상점에서 코스튬 및 각종 인게임 아이템으로 교환.</li>
+                        </ul>
+
+                        <p><b>획득 가능 보상</b></p>
+                        <ul>
+                            <li>청룡 소환수 : 희귀 등급 부터 시작하여 최대 초월 등급까지 진화 시킬 수 있음.</li>
+                            <ul>
+                                <li>무과금 유저 기준 전설 등급 청룡 소환수 도달 가능.</li>
+                                <li>과금을 통해 게임 최초 출시되는 초월 등급 소환수 도달 가능.</li>
+                            </ul>
+                            <li>코스튬 12종 : 희귀 등급 코스튬 9종 / 영웅 등급 코스튬 3종</li>
+                            <ul>
+                                <li>유료 상품 구매를 통해 모든 코스튬 획득 가능.</li>
+                                <li>무과금 유저 기준 일부 코스튬 획득 가능.</li>    
+                            </ul>
+                        </ul>
+
+                        <p><b>청룡 성장 및 승급</b></p>
+                        <ul>
+                            <li>각 등급의 청룡을 레벨 10으로 성장.</li>
+                            <ul>
+                                <li>소환 상태로 몬스터를 처치하여 소환수 경험치 획득.</li>
+                                <li>청룡 소환수 전용 경험치 아이템을 사용하여 경험치 획득.</li>
+                            </ul>
+                            <li>청룡 레벨 10 도달 시 아이템을 사용하여 높은 등급으로 승급.</li>
+                            <ul>
+                                <li>특수 임무 / 상품 구매를 통해 획득한 “여의주” 아이템과 소환수와 동일한 등급의 “소환수 영혼석” 이라는 재료를 소모하여 승급 가능.</li>
+                                <li>예시 : 희귀 등급의 “청룡” 소환수의 레벨 10달성 이후  “여의주” {0}개와 “희귀 소환수 영혼석” {0}개를 소모하여 영웅 등급으로 승급.</li>
+                            </ul>
+                        </ul>
+                        
+                        <img src="blueDragon1.png" style="width: 512px;">
+                        
+                        <p><b>초월 등급의 차별점.</b></p>
+                        <ul>
+                            <li>초월 등급 달성 시 해금되는 추가 스탯.</li>
+                            <ul>
+                                <li>청룡 소환 시 적용되는 3개의 스탯이 랜덤으로 결정됨.</li>
+                                <li>각 스탯은 인게인 아이템을 소모하여 다른 랜덤 스탯으로 변경 가능.</li>
+                            </ul>
+                            <li>초월 등급 소환수 스킬 강화.</li>
+                            <ul>
+                                <li>청룡의 기본 스킬은 초월 등급 달성 이후 3개의 스킬 중 하나로 업그레이드 가능.</li>
+                                <li>각 스킬은 인게임 아이템을 소모하여 해금이 가능하며 한번 해금된 스킬들은 자유롭게 변경할 수 있음.</li>
+                            </ul>
+                        </ul>
+                        <dl>
+                            <dd>*이벤트 종료 시점 혹은 이후에 초월 등급을 달성한 유저들을 위하여 상시 획득 가능한 재화를 요구하게 하여 이벤트 종료 이후에도 스탯 변경 및 스킬이 강화 가능하게 하도록 함.</dd>
+                        </dl>
+                        
+                        <img src="blueDragon2.png" style="width: 720px;">
+
+                        <p><b>BM 상품</b></p>
+                        <ul>
+                            <li>현금 구매 상품</li>
+                            <ul>
+                                <li>이벤트 패스 및 이벤트 재화 관련 상품 등 낮은 가격대의 상품을 전면에 배치.</li>
+                            </ul>
+                            <li>타임 특가 상품</li>
+                            <ul>
+                                <li>이벤트 기간 특정 시점에 출력되는 시간 한정 상품.</li>
+                                <li>청룡 소환수 10레벨 달성 혹은 승급 시 출력되게하여 성장에 필요한 아이템을 제공.</li>
+                            </ul>
+                        
+                        </ul>
+
+                        <p><b>성과</b></p>
+                        <ul>
+                            <li>이벤트 기간 3억 8천만원 매출 달성.</li>
+                        </ul>
+                        <h1></h1>
+                    </div>
+                    <button class="collapsible">닌자 서바이벌 : 챕터 개선 기획 상세</button>
+                    <div class="content">
+                        <h2>서바이벌 게임 플레이 방식</h2>
+                        <ul>
+                            <li>하나의 챕터별로 제한시간 동안 몰려오는 적들을 처치하며 살아남아야한다.</li>
+                            <li>몬스터를 처치 하여 인게임 레벨을 올릴 수 있고 증가한 레벨에 따라 사용 가능한 스킬을 획득하거나 강화할 수 있다.</li>
+                            <li>마지막 보스 처치 시 해당 챕터가 클리어되며 보상을 획득한다.</li>
+                        </ul>
+                        
+                        <h2>최초 기획</h2>
+                        
+                        <p><b>기획 방향 : 멀티 플레이의 재미를 접목시킨 서바이벌 게임 제작.</b></p>
+                        <ul>
+                            <li>플레이어들이 서로에게서 멀어지지않고 협력이 가능하도록 무한맵이 아닌 제한된 크기의 맵으로 제작.</li>
+                            <li>플레이어마다 레벨업 시점이 다를 수 있어 스킬 선택을 위해 퍼즈를 하지 않는 방향으로 기획.</li>
+                        </ul>
+                        <br>
+                        <p><b>레벨업 : 몬스터 처치를 통해 드랍된 경험치를 획득하여 레벨업</b></p>
+                        <ul>
+                            <li>레벨업 시 랜덤으로 스킬을 배우거나 보유한 스킬 레벨이 증가한다.</li>
+                            <li>스킬은 개당 최대 5레벨 까지 증가 가능.</li>
+                            <li>25레벨 이후로는 장착한 장비 등의 효과로 인해 스탯 증가 효과만 적용.</li>
+                        </ul>
+                        <br><br>
+                        <p><b>웨이브 : 챕터는 5개의 웨이브로 구성.</b></p>
+                        <ul>
+                            <li>웨이브가 진행될수록 플레이타임이 상이하며 제한시간동안 몬스터들에게서 살아남아야함.</li>
+                            <li>웨이브가 넘어가는 구간에서 10초의 “특성 선택” 시간이 주어짐.</li>
+                            <li>5번째 웨이브에서는 보스를 제한시간 내에 처치하여 챕터 클리어.</li>
+                        </ul>
+                        <br>
+                        <p><b>스킬 각성 : 각 스킬은 각성을 하기위해 3개의 특성을 요구함.</b></p>
+                        <ul>
+                            <li>특성 선택 시간동안 주어진 3개의 옵션에서 하나를 선택.</li>
+                            <li>3개의 특성을 모두 배우면 스킬은 자동으로 각성.</li>
+                            <li>동일 특성을 공유하는 스킬이 있음.</li>
+                            <li>장비등의 효과로 인해 원하는 특성을 보다 쉽게 획득 가능.</li>
+                        </ul>
+                        
+                        
+                        
+                        <h2>개선 방향</h2>
+                        <p><b>의도</b></p>
+                        <ul>
+                            <li>밸런스 이슈로 인한 콘텐츠 소모 속도 완화 및 hack-n-slash 적인 재미 강화.</li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <div class="explanation-image">
+                            <img src="ninjaSurvivorChapter1.gif" style="width: 20%;">
+                            <img src="ninjaSurvivorChapter2.gif" style="width: 20%;">
+                            <img src="ninjaSurvivorChapter3.gif" style="width: 20%;">
+                            <img src="ninjaSurvivorChapter4.gif" style="width: 20%;">
+                        </div>
+
+                        <p><b>몬스터 소환 방식</b></p>
+                        <ul>
+                            <li>기존 : 맵 내 랜덤 위치에서 몬스터 소환. </li>
+                            <li>변경 : 기존 방식과 신규 방식을 챕터 컨셉별로 분류하여 사용.</li>
+                            <li>신규 방식 : 해당 챕터는 기존 맵보다 더 넓게 제작되며 몬스터들은 플레이어 위치를 기준으로 원형으로 넓게 소환되어 플레이어에게 조여들어감.</li>
+                        </ul>
+
+                        <p><b>웨이브 진행 방식</b></p>
+                        <ul>
+                            <li>기존 : 제한시간동안 살아남아 다음 웨이브로 넘어감.</li>
+                            <li>변경 : 웨이브를 클리어하기 위해 정해진 마리수의 몬스터 처치.</li>
+                            <li>제한 시간이 지나면 몬스터들이 폭주하며 이동속도가 대폭 증가한다.</li>
+                            <li>폭주 상태는 제한시간이 없으며 죽지 않고 몬스터 처치 수를 채우면 다음 웨이브로 넘어갈 수 있음.</li>
+                        </ul>
+
+                        <p><b>비기</b></p>
+                        <ul>
+                            <li>캐릭터 별로 고유의 특수 스킬을 사용할 수 있는 신규 시스템.</li>
+                            <li>몬스터를 처치하여 비기를 충전할 수 있고 플레이어가 원하는 타이밍에 버튼을 눌러 비기 사용 가능.</li>
+                            <li>"비기"를 통해 한 번에 많은 수의 몬스터를 처치할 수 있는 Hack and slash의 경험을 강화.</li>
+                        </ul>
+                        
+                        <h1></h1>
+                    </div>
+                    <button class="collapsible">닌자 서바이벌 : 보스 협동 던전 기획 상세</button>
+                    <div class="content">
+                        <p><b>방향</b></p>
+                        
+                        <ul>
+                            <li>기존 최대 2인으로 제한되던 콘텐츠들과 차별화하여 4인까지 함께 플레이가 가능한 보스 던전 제작.</li>
+                        </ul>
+                        
+                        <p><b>의도</b></p>
+                        <ul>
+                            <li>파티 플레이의 중요도를 강화하기 위해 플레이어가 많을수록 더 많은 이익을 획득 할 수 있도록 설계.</li>
+                        </ul>
+                        
+                        <p><b>기획</b></p>
+                        <ul>
+                            <li>플레이어들은 매주 보스에게 가한 피해량에 따라 랭킹이 등록된다.</li>
+                            <li>보스 로테이션을 통해 매주 다른 보스와 전투 진행. (보스 5마리)</li>
+                            <li>일일 2회 플레이 가능.</li>
+                            <li>플레이 타임 : 1분</li>
+                        </ul>
+
+                        <p><b>보스 레벨</b></p>
+                        <ul>
+                            <li>보스의 체력이 “0”에 도달하면 보스 레벨 증가및 체력이 채워진다.</li>
+                            <li>보스의 레벨이 증가할수록 보스의 체력, 공격력, 이속 등 스탯이 증가한다.</li>
+                            <li>10 레벨 마다 플레이 타임이 1초 증가한다.</li>
+                            <li>30 레벨 마다 보스는 10초간 폭주 상태에 돌입한다.</li>
+                            <li>이동속도 및 스킬 사용 주기가 증가함.</li>
+                            <li>50레벨 마다 보스의 스킬 구성이 강화된다. (150 레벨까지 3회)</li>
+                            <li>투사체 개수 증가 및 사용하는 스킬 종류 추가.</li>
+                        </ul>
+                        
+                        <p><b>보물상자</b></p>
+                        <ul>
+                            <li>보스를 타격하여 보물 상자의 요구치를 채우면 보스가 5초간 스턴에 걸리며 보상을 드랍한다.
+                        보물상자는 이후 타격 요구치가 증가하며 리셋된다. (반복)</li>
+                            <li>캐릭터에 따라 기본 스킬에 공격 횟수가 차이가 나여 일부 캐릭터들의 스킬에는 보정치를 적용.</li>
+                        </ul>
+                        
+                        <p><b>보상</b></p>
+                        <ul>
+                            <li>보스와의 전투를 통해 인게임 보상 획득 가능.</li>
+                            <li>주간 플레이 횟수에 따른 보상 획득 가능.</li>
+                            <li>보스에게 가한 개인 피해량을 집계하여 주간 랭킹 보상 지급</li>
+                        </ul>
+                        <h1></h1>
+                    </div>
+                </div>
+                
             </section>
         </div>
-        
-        
         <footer></footer>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
