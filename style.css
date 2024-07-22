@@ -23,7 +23,10 @@ body{
 }
 
 #title h1, h2, h3{
-    text-decoration: none; float: left; color: black; padding-left: 5%; padding-right: 5%; clear: both;
+    text-decoration: none; 
+    float: left;  
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 #langButton{
@@ -82,7 +85,6 @@ p{
     text-decoration: none; 
     width: 90%;
     float: left; 
-    color: black; 
     padding-left: 5%; 
     padding-right: 5%; 
     padding-top: 1%;
@@ -132,11 +134,44 @@ dt{
     float: inherit;
 }
 
-#intro{
-    padding-top: 1%;
-    padding-bottom: 1%;
+.descVid{
+    display: inline-block;
+    width: 95%;
+    background-color: rgba(0,0,0,0.5);
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-radius: 25px;
+    margin: 1%;
 }
-#details{
+.descVid img{
+    width: 100%;
+    border-radius: 25px;
+}
+
+.left30{
+    display: inline-block;
+    width: 28%;
+    padding-left: 2%;
+    vertical-align: middle;
+}
+.right70{
+    display: inline-block;
+    width: 69%;    
+    vertical-align: middle;
+}
+.left70{
+    display: inline-block;
+    width: 69%;    
+    vertical-align: middle;
+}
+.right30{
+    display: inline-block;
+    width: 28%;
+    padding-right: 2%;
+    vertical-align: middle;
+}
+
+#intro{
     padding-top: 1%;
     padding-bottom: 1%;
 }
@@ -163,12 +198,12 @@ dt{
 }
 
 .profile-image {  
-    width: 80%;
+    height: 120px;
 }
 
 .links{
     display: inline-block;
-    width: 45%;
+    width: 40%;
     text-decoration: none;
     padding-top: 2%;
     padding-bottom: 2%;
@@ -216,32 +251,90 @@ dt{
     width: 60%;
 }
 
+#idleNinjaBG{
+    display: inline-block;
+    width: 90%;
+    border-radius: 25px;
+    background-size: cover;
+    background-image: url("idleNinja_bg.webp");
+    background-position: center;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 2%;
+}
+
+#ninjaSurvivorBG{
+    display: inline-block;
+    width: 90%;
+    border-radius: 25px;
+    background-size: cover;
+    background-image: url("ninjaSurvivor_bg.webp");
+    background-position: center;
+    height: auto;
+    overflow: hidden;
+}
+
+.myWorks {
+    border-radius: 25px;
+    width: 95%;
+    background-color: rgba(12,12,12,0.85);
+    color: #EFEFEF;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.logo {
+    position: relative;
+    grid-area: 1 / 1 / 2 / 2;
+    width: 10%;
+    z-index: 1;
+    float: left;
+    padding-left: 1%;
+    padding-top: 1%;
+    
+}
+
+#shutenDoji{
+    display: inline-block;
+    width: 90%;
+    background-color: rgba(80,20,50,100);
+    color: #EFEFEF;
+    border-radius: 25px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 1%;
+}
+.titleText{
+    display: inline-block;
+}
+
+.titleText h2{
+    font-size: 1.5em;
+    color: #EFEFEF;
+    margin: 0;
+    padding: 0;
+}
+
+.titleText h3{
+    font-size: 1.5em;
+    color: #EFEFEF;
+    margin: 0;
+    padding: 0;
+}
 
 .collapsible {
+    display: inline-block;
     background-color: #777;
     color: white;
-    cursor: pointer;
     padding: 2% 1% 2% 1%;
     width: 90%;
     border: none;
     text-align: left;
     outline: none;
     font-size: 1em;
-}
-
-.active, .collapsible:hover {
-    background-color: #555;
-}
-
-.content {
-    display: inline-block;
-    max-height: 0;
-    width: 100%;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    background-color: white;
-    margin: 0 auto;
-    padding: 0;
 }
 
 video{
