@@ -27,6 +27,7 @@ body{
     float: left;  
     padding-left: 5%;
     padding-right: 5%;
+    clear: both;
 }
 
 #langButton{
@@ -126,11 +127,11 @@ dt{
 
 #left{
     display: inline-block;
-    width: 70%;
+    width: 50%;
 }
 #right{
     display: inline-block;
-    width: 25%;
+    width: 50%;
     float: inherit;
 }
 
@@ -168,6 +169,17 @@ dt{
     display: inline-block;
     width: 28%;
     padding-right: 2%;
+    vertical-align: middle;
+}
+
+.left{
+    display: inline-block;
+    width: 48%;
+    vertical-align: middle;
+}
+.right{
+    display: inline-block;
+    width: 50%;
     vertical-align: middle;
 }
 
@@ -307,6 +319,27 @@ dt{
     padding-bottom: 2%;
     margin: 1%;
 }
+#blueDragon{
+    display: inline-block;
+    width: 90%;
+    background-color: rgba(50,40,80,100);
+    color: #EFEFEF;
+    border-radius: 25px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 1%;
+}
+#surviveChapter{
+    display: inline-block;
+    width: 90%;
+    background-color: rgba(50,80,80,100);
+    color: #EFEFEF;
+    border-radius: 25px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 1%;
+}
+
 .titleText{
     display: inline-block;
 }
