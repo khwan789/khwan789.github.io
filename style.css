@@ -44,6 +44,11 @@ h1, h2, h3, h4, h5{
     width: 70%;
 }
 
+.custom-tooltip {
+  --bs-tooltip-bg: var(--bd-violet-bg);
+  --bs-tooltip-color: var(--bs-white);
+}
+
 #title a{
     float: right;
     padding-right: 2%;
@@ -164,9 +169,9 @@ ul ul {
     font-size: 0.9em;
 }
 
-img{
+.row img{
     width: 100%;
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
 /*main projects*/
