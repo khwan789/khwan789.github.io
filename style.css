@@ -9,7 +9,6 @@ h1,h2,h5,p{
     width: 100%;
     color: black;
     text-align: left;
-    padding-top: 1%;
     padding-bottom: 1%;
     margin: 0;
 }
@@ -45,6 +44,8 @@ h1,h2,h5,p{
 .height100{
     height: 100%;
     align-content: center;
+}
+.nav{
 }
 
 /*자기 소개*/
