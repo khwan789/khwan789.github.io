@@ -18,7 +18,7 @@ li{
     word-break: keep-all;
 }
 
-iframe{
+iframe, video{
     margin-bottom: 3%;
 }
 
@@ -97,8 +97,8 @@ iframe{
 }
 
 #titleIdleNinja{
-    background-image: url("idleNinja_bg.webp");
-    background-position: center 40%;
+    background-image: url("idleNinja_bg2.png");
+    background-position: center 80%;
 }
 
 
@@ -113,8 +113,8 @@ iframe{
 }
 
 #titleNinjaSurvivor{
-    background-image: url("ninjaSurvivor_bg.webp");
-    background-position: center 65%;
+    background-image: url("ninjaSurvivor_bg2.png");
+    background-position: center 80%;
 }
 
 #titleChapter{
