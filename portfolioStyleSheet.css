@@ -1,0 +1,223 @@
+body{
+    text-align: center;
+}
+
+h1,h2,h3,h4{
+    color: white;
+    margin: 0 auto;
+}
+h5,p{
+    color: darkgray;
+    margin: 0 auto;
+    word-break: keep-all;
+}
+
+h1,h2,h3,h4,h5{
+    font-family: "Volkhov", serif;
+}
+
+nav{
+    width: 100%;
+    height: 74px;
+    position: fixed;
+    background-color: rgb(0,0,0,0.7);
+}
+.navPadding{
+    margin-top: 9px;
+}
+
+.internalLinks{
+    width: 45%;
+    height: 100%;
+    float: left;
+    align-content: center;
+}
+.externalLinks{
+    width: 45%;
+    height: 100%;
+    float: right;
+    align-content: center;
+}
+.externalLinks img{
+    height: 30%;
+}
+.home{
+    color: darkgray;
+    text-decoration: none;
+}
+.home:hover{
+    color: white;
+}
+.resume{
+    color: darkgray;
+    text-decoration: none;
+}
+.resume:hover{
+    color: white;
+}
+/* Dropdown Button */
+.dropbtn {
+    background-color: #00000000;
+    color: darkgray;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    
+    width: 320px;
+    z-index: 1;
+    text-align: left;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: darkgray;
+    padding: 15px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: #00000099;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {color: white;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block; }
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {color: white;}
+
+.focus{
+    display: inline-block;
+    width: 33%;
+    word-break: break-all;
+}
+
+#title{
+    width: 100%;
+    height: 460px;
+    background-size: cover;
+    background-image: url("idleNinja_bg.webp");
+    background-position: center 40%;
+    overflow: hidden;
+}
+#titleText{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,0.8);
+    align-content: center;
+}
+
+#intro{
+    width: 100%;
+    height: 460px;
+    background-color: rgb(30,30,30);
+    align-content: center;
+}
+#introImg{
+    width: 30%;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: white;
+    display:inline-block;
+}
+#introImg img{
+    width: 80%;
+}
+
+
+
+#projects{
+    width: 100%;
+    height: 740px;
+    background-color: black;
+    align-content: center;
+}
+#idleNinjaBG{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url("idleNinja_bg.webp");
+    background-position: center;
+    overflow: hidden;
+    align-content: center;
+}
+#ninjaSurvivorBG{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url("ninjaSurvivor_bg.webp");
+    background-position: center 80%;
+    overflow: hidden;
+    align-content: center;
+}
+
+.myGames{
+    display: inline-block;
+    width: 100%;
+    height: 50%;
+}
+.gameContainer{
+    display: inline-block;
+    width: 33%;
+    height: 100%;
+    padding: 3% 0.5% 0% 0.5%;
+}
+.openButton{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    padding: 0;
+    overflow: hidden;
+    border-style: none;
+}
+.logo{
+    width: 33%;
+}
+
+footer{
+    height: 256px;
+    background-color: rgb(30,30,30);
+    align-content: center;
+}
+footer p{
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
