@@ -19,6 +19,8 @@ li{
 }
 
 iframe, video{
+    width: 100%;
+    height: 670px;
     margin-bottom: 3%;
 }
 
@@ -90,6 +92,7 @@ iframe, video{
 
 .image{
     border-radius: 15px;
+    width: 100%;
 }
 .imgLeft{
     float: left;
@@ -123,7 +126,46 @@ iframe, video{
 }
 
 
+@media only screen and (min-width:200px) and (max-width:1080px) {
 
+    .logoBig{
+        width: 25%;
+        margin-top: 10%;
+    }
+    .centerHeight{
+        height: 100%;
+        align-content: center;
+    }
+    .titleBanner{
+        height: 280px;
+    }
+    .downloads{
+        width: 100%;
+    }
+    .downlaodBtn{
+        width: 20%;
+        margin: 1%;
+    }
+    .project{
+        width: 80%;
+    }
+    iframe,video{
+        height: 240px;
+    }
+    
+    .titleMain{
+        font-size: 3em;
+    }
+    .titleSub{
+        font-size: 2em;
+    }
+    .imgLeft{
+        float: none;
+    }
+    .image{
+        width: 75%;
+    }
+}
 
 
 
