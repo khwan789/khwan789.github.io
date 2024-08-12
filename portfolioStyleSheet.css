@@ -183,7 +183,11 @@ nav{
     border-style: none;
 }
 .logo{
-    width: 30%;
+    width: 33%;
+}
+.logoBig{
+    width: 60%;
+    margin-top: 5%;
 }
 
 footer{
