@@ -196,7 +196,7 @@ footer p{
     color: white;
 }
 .footerLink{
-    visibility: hidden;
+    color: black;
 }
 
 @media only screen and (min-width:200px) and (max-width:768px) {
@@ -221,9 +221,5 @@ footer p{
     .gameContainer{
         width: 75%;
         height: 50%;
-    }
-    .footerLink{
-        visibility: visible;
-        color: black;
     }
 }
