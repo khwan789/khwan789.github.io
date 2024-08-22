@@ -16,6 +16,7 @@ li{
     text-align: left;
     color: rgb(100,100,100);
     word-break: keep-all;
+    padding-bottom: %;
 }
 
 iframe, video{
@@ -74,6 +75,7 @@ iframe, video{
 .project{
     display: inline-block;
     width: 70%;
+    max-width: 1080px;
     margin-top: 3%;
 }
 
@@ -128,6 +130,22 @@ iframe, video{
     background-position: center 65%;
 }
 
+.flowChart{
+    background-color: aliceblue; 
+    border-radius: 15px; 
+    max-height: 500px;
+}
+
+.bdSkillGif{
+    float: left; 
+    padding-right: 1%; 
+    width: 30%;
+    border-radius: 15px;
+}
+.desc{
+    padding-bottom: 3%;
+}
+
 @media only screen and (min-width:200px) and (max-width:768px) {
 
     .logoBig{
@@ -154,7 +172,7 @@ iframe, video{
     iframe,video{
         height: 240px;
     }
-    
+
     .titleMain{
         font-size: 3em;
     }
