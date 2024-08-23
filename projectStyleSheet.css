@@ -16,7 +16,7 @@ li{
     text-align: left;
     color: rgb(100,100,100);
     word-break: keep-all;
-    padding-bottom: %;
+    padding-bottom: 1%;
 }
 
 iframe, video{
@@ -144,6 +144,23 @@ iframe, video{
 }
 .desc{
     padding-bottom: 3%;
+}
+
+#toNinjaSurvivor{
+    background-image: url("ninjaSurvivor_bg.webp");
+    background-position: center 75%;
+}
+
+#toIdleNinja{
+    background-image: url("idleNinja_bg.webp");
+    background-position: center 45%;
+}
+
+footer{
+    width: 100%;
+    height: 230px;
+    background-size: cover;
+    overflow: hidden;
 }
 
 @media only screen and (min-width:200px) and (max-width:768px) {

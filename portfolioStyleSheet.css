@@ -195,9 +195,6 @@ footer{
 footer p{
     color: white;
 }
-.footerLink{
-    color: black;
-}
 
 @media only screen and (min-width:200px) and (max-width:768px) {
     .focus{
