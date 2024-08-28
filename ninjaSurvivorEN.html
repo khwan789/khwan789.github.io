@@ -22,8 +22,7 @@
 
         <nav>
             <div class="internalLinks">
-                <a href="en.html" class="home">Home</a>
-
+                <a href="kr.html" class="home">Home</a>
 
                 <div class="dropdown">
                     <button class="dropbtn">Projects</button>
@@ -34,7 +33,7 @@
                     </div>
                 </div>
 
-                <a href="Resume.pdf" class="resume" target="_blank">Resume</a>
+                <a href="Resume_kr.pdf" class="resume" target="_blank">Resume</a>
             </div>
 
             <div class="externalLinks">
@@ -55,48 +54,49 @@
                             <img class="logoBig" src="ninjaSurvivor_logo_en.png">
                             <div class="downloads">
                                 <a href="https://apps.apple.com/us/app/ninja-survivors-online/id6444254297" target="_blank"> <img class="downloadBtn" src="branding/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"></a>
-                                
                                 <a href="https://play.google.com/store/apps/details?id=com.puzzlemonsters.ninjasurvivors&hl=en" target="_blank"><img class="downloadBtn" src="branding/GetItOnGooglePlay_Badge_Web_color_English.png"></a>
                             </div>
                         </div>
                         <div class="col-sm-4 centerHeight">
-                            <a class="otherProject" href="idleNinjaEN.html">Idle Ninja Online ▶</a>
+                            <a class="otherProject" href="idleNinjaEN.html">View Idle Ninja Online ▶</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-
         <div class="project">
-            <video src="ninjaSurvivorCinematicEN.mp4" width="100%;" controls></video>
-            
+            <video class="titleVideo" src="ninjaSurvivorCinematicKR.mp4" width="100%;" controls></video>
+
+            <!--Ninja Survivors Summary-->
             <div class="container-fluid">
+                <!--Project Description-->
                 <div class="row">
                     <div class="col-sm-4">
                         <p class="title-large">Ninja Survivors Online</p>
                     </div>
                     <div class="col-sm-8">
-                        <p>"Ninja Survival Online," released in 2022, is a mobile game in the survival RPG genre. It delivers the excitement of roguelike gameplay in an online environment, allowing players to enjoy fast-paced and thrilling experiences with friends.</p>
+                        <p>'Ninja Survivors Online' is a survival RPG mobile game released in 2022, offering fast-paced and thrilling roguelike experiences with friends in an online environment.</p>
                     </div>
                 </div>
-                <br><br>
-
+                <br>
+                <br>
+                <!--My Work-->
                 <div class="row">
                     <div class="col-sm-4">
-                        <p class="title-large">Contribution</p>
+                        <p class="title-large">Role Description</p>
                     </div>
                     <div class="col-sm-8">
                         <p class="subtitle-large">Chapter Design</p>
                         <ul>
-                            <li>Designed chapters that enhance the cooperative fun of multiplayer survival gameplay while delivering the satisfaction of defeating enemies through well-crafted level design.</li>
-                            <li>Developed over 100 regular chapters and a "Trial Mode" that presents a strong challenge for high-level players, incorporating various map and stage mechanics, as well as unique boss patterns, to keep the gameplay experience fresh and engaging.</li>
+                            <li>Created chapters with level designs that emphasize cooperative play and the thrill of defeating enemies, tailored for a multiplayer survival game.</li>
+                            <li>Designed over 100 chapters with diverse map and stage mechanics, along with unique boss patterns, to keep the gameplay experience fresh and engaging.</li>
                         </ul>
                         <div class="line"></div>
                         <p class="subtitle-large">Dungeon Design</p>
                         <ul>
-                            <li>Created daily dungeons that allows players, regardless of their progression level, to freely enjoy the game and gather desired materials.</li>
-                            <li>To strengthen the multiplayer identity, developed boss content where four players cooperate to deal as much damage as possible to the boss, earning greater in-game rewards based on their performance.</li>
+                            <li>Designed daily dungeons where players of any growth level can freely enjoy the game and acquire desired materials.</li>
+                            <li>Developed boss content where four players cooperate to maximize damage to the boss, enhancing the multiplayer experience and earning greater in-game rewards.</li>
                         </ul>
                     </div>
                 </div>
@@ -104,6 +104,7 @@
         </div>
         <br><br><br><br><br>
 
+        <!--Chapter Improvement Planning Details-->
         <div class="titleBanner" id="titleChapter">
             <div class="titleBannerText">
                 <p class="titleMain">Chapter Improvement Design</p>
@@ -117,12 +118,15 @@
                     </div>
                     <div class="col-sm-8">
                         <ul>
-                            <li>Two players must cooperate on a limited-size map to defeat waves of incoming monsters and survive within a set time limit.</li>
-                            <li>Players can level up by defeating monsters, and with each level up, they can acquire and upgrade up to five skills.</li>
-                            <li>The game is designed with an online multiplayer environment in mind, featuring a wave structure that allows for short, intense gameplay sessions. </li>
-                            <li>Each chapter consists of six waves, each lasting about one minute, with the final wave featuring a boss that must be defeated to clear the chapter.</li>
+                            <li><b>Multiplayer Survival Game</b> : Two players cooperate on a limited-sized map to defeat incoming monsters and survive within a set time limit.</li>
+                            <li><b>Level Up</b> : Players level up by defeating monsters, with each level-up offering up to five skills to acquire and enhance.</li>
+                            <li><b>Wave Structure</b> : Designed for short, focused gameplay in an online multiplayer environment. Each chapter consists of six waves, each lasting around one minute.</li>
+                            <li>Defeat the boss at the final sixth wave.</li>
                         </ul>
                     </div>
+                </div>
+                <div class="flowChart">
+                    <img src="chapterFlowOldKR.png" width="100%;">
                 </div>
                 <br>
                 <div class="row">
@@ -131,103 +135,141 @@
                     </div>
                     <div class="col-sm-8">
                         <ul>
-                            <li>Monsters spawn randomly on the map but are restricted from spawning near the players to prevent interruptions in their movement paths.</li>
-
-                            <li>However, players adapted to this mechanic by repeatedly circling the map's edges during the time limit, leading to a preference for survival-focused equipments and skills, resulting in a more uniform gameplay experience.</li>
-                            <li>This unintended playstyle allowed players with lower stats to clear chapters by merely surviving the time limit, reducing the motivation for growth and diminishing the reward experience.</li>
+                            <li><b>Initial Intent</b> : Monsters spawn randomly across the map, with restrictions to prevent them from spawning near the player's location to avoid disrupting player movement.</li>
+                            <li><b>Issue</b> : Players adopted a strategy of circling the map edges, focusing primarily on survival. This led to a uniform gameplay style centered on survival-oriented equipment and skills.</li>
+                            <li>Players with unintended specs could clear chapters by merely surviving the time limit, which diminished the motivation for growth and undermined the reward system.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="lineBold"></div>
                 <p class="title-large">Improvements</p>
                 <br>
-                <div class="row">
 
+                <div class="row">
                     <div class="col-sm-4">
-                        <img class="imgLeft" src="spawnClear.gif" style="width: 80%;">
+                        <video class="imgLeft" width="75%" autoplay loop muted>
+                            <source src="spawnClear.mp4">
+                        </video>
                     </div>
                     <div class="col-sm-8">
                         <p class="subtitle-large">Monster Spawn Method</p>
                         <ul>
-                            <li>Monsters now spawn in a circular pattern around the player, closing in from inside and outside the map.</li>
+                            <li>Monsters spawn more broadly around the player, with some chapter maps expanded in size.</li>
+                            <li>Players now respond to monsters coming from various directions in a larger space, requiring more strategic movement.</li>
+                            <li>This change aims to break away from fixed survival strategies and encourage a more diverse range of playstyles.</li>
                         </ul>
                         <div class="line"></div>
                         <p class="subtitle-large">Clear Condition</p>
                         <ul>
-                            <li>Players must defeat a set number of monsters within the time limit.</li>
-                        </ul>
-                        <div class="line"></div>
-                        <p class="subtitle-large">Why</p>
-                        <ul>
-                            <li>Encourage players to move more dynamically, providing a variety of movement paths while promoting more active combat to achieve the required number of kills.</li>
+                            <li>Players must defeat a set number of monsters within the time limit to clear the wave.</li>
+                            <li>The required number kills increases with each wave (Wave 1 = 100 / Wave 2 = 300...).</li>
+                            <li>Encouraged more active combat rather than a passive survival strategy to achieve the required number of kills.</li>
                         </ul>
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-sm-4">
-                        <img class="imgLeft" src="rageSpecial.gif" style="width: 80%;">
+                        <video class="imgLeft" width="75%" autoplay loop muted>
+                            <source src="rageSpecial.mp4">
+                        </video>
                     </div>
                     <div class="col-sm-8">
-                        <p class="subtitle-large">Rage System</p>
-                        <ul>
-                            <li>When the time limit is reached, monsters enter a rage state.</li>
-                            <li>In rage state, monsters are enhanced and their movement speed increases.</li>
-                            <li>Rage state continues until the player dies or the clear condition is met.</li>
-                        </ul>
-                        <div class="line"></div>
                         <p class="subtitle-large">Secret Technique System</p>
                         <ul>
-                            <li>A skill that can be activated by the player once the skill gauge, charged by defeating monsters, is fully filled.</li>
-                            <li>This skill inflicts damage over a wide area and grants a temporary invincibility buff.</li>
+                            <li>A skill that can be activated at player's will once the skill gauge is fully charged by defeating monsters.</li>
+                            <li>Inflicts damage over a wide area and grants a temporary invincibility buff, increasing strategic options.</li>
+                            <li>Designed for each character, offering a new growth track as a character upgrade element.</li>
                         </ul>
                         <div class="line"></div>
-                        <p class="subtitle-large">Why</p>
+                        <p class="subtitle-large">Rage System</p>
                         <ul>
-                            <li>Provide intense pressure and thrill through enhanced monsters in rage state.</li>
-                            <li>Offer a broader and more varied gameplay experience by allowing players to utilize survival skills, including secret techniques, to clear the chapter.</li>
+                            <li><b>End of Time Limit</b> : Monsters become enraged with increased strength and speed until the player either dies or fulfills the clear conditions.</li>
+                            <li>Enhanced narrative elements and emphasized the importance of meeting objectives within the time limit.</li>
+                            <li>Created an environment where diverse equipment and skills can be used to handle unpredictable situations.</li>
+                            <li>Enhanced the sense of urgency and maximized the value of secret technique by allowing players to recover from challenging situations even after the time limit expires.</li>
                         </ul>
                     </div>
                 </div>
                 <br>
+                <div class="flowChart">
+                    <img src="chapterFlowKR.png" width="100%;">
+                </div>
                 <br>
-                <p class="title-large">Secret Technique Skills for Different Characters</p>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <p class="title-large">Retrospective</p>
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="subtitle-large">Keep</p>
+                        <ul>
+                            <li>Provided an environment where players could be more actively involved in the game's outcome.</li>
+                            <li>Experienced significant changes through minimal adjustments within a limited environment.</li>
+                            <ul>
+                                <li>Encouraged changes in playstyle through the adjustment of clear conditions and the introduction of the rage system.</li>
+                                <li>Enhanced the Hack'n'Slash gameplay while maintaining the simplicity of a casual game with the addition of a single button for the secret technique skill.</li>
+                            </ul>
+                        </ul>
+                        <p class="subtitle-large">Problem</p>
+                        <ul>
+                            <li>Decreased player interaction in larger maps, reducing the multiplayer aspect of the game.</li>
+                            <li>Difficulty in locating bosses in the expanded map led to automatically moving players to the boss at the start of the boss wave, disrupting the flow of the experience.</li>
+                        </ul>
+                        <p class="subtitle-large">Try</p>
+                        <ul>
+                            <li>A shrinking barrier gimmick over time to encourage interaction with other players and natural flow toward boss battles.</li>
+                            <li>Implement following feature only in select chapters to add variability to gameplay.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lineBold"></div>
+                <p class="title-large">Secret Technique Skills Matching Character Concepts</p>
                 <br>
                 <div class="row">
                     <div class="col-sm-3">
-                        <img class="image" src="special2.gif">
+                        <video class="image" autoplay loop muted>
+                            <source src="special2.mp4">
+                        </video>
                         <br><br>
                         <ul>
-                            <li>'Luho,' a character who throws shurikens, summons clones around the character. The health and attack damage of the clones increase in proportion to the player's stats, throwing shurikens at nearby enemies.</li>
+                            <li>'Luho,' a character who throws shurikens, summons clones. The health and attack power of the clones increase in proportion to the player's stats, and the clones throw shurikens at nearby enemies.</li>
                         </ul>
                     </div>
                     <div class="col-sm-3">
-                        <img class="image" src="special4.gif">
+                        <video class="image" autoplay loop muted>
+                            <source src="special4.mp4">
+                        </video>
                         <br><br>
                         <ul>
-                            <li>'Lucy,' a character who throws bombs, summons giant bombs that fall from the sky at a location designated by the player.</li>
+                            <li>'Lucy,' a character who throws bombs, creates giant bombs that fall from the sky at a location designated by the player.</li>
                         </ul>
                     </div>
                     <div class="col-sm-3">
-                        <img class="image"src="special3.gif">
+                        <video class="image" autoplay loop muted>
+                            <source src="special3.mp4">
+                        </video>
                         <br><br>
                         <ul>
                             <li>'Ken-kun,' a character who wields a sword, rapidly swings the sword and charges multiple times in the direction controlled by the player.</li>
                         </ul>
                     </div>
                     <div class="col-sm-3">
-                        <img class="image" src="special1.gif">
+                        <video class="image" autoplay loop muted>
+                            <source src="special1.mp4">
+                        </video>
                         <br><br>
                         <ul>
-                            <li>'Ryoko,' a character who fires arrows, rapidly fires arrows in a fan shape. The character is fixed in position and rotates in the direction controlled by the player.</li>
+                            <li>'Ryoko,' a character who shoots arrows, rapidly fires arrows in a fan shape. The character is fixed in place and rotates in the direction controlled by the player.</li>
                         </ul>
                     </div>
                 </div>
                 <br>
             </div>
         </div>
-        <footer style="background-color: white;">
-            <a class="footerLink" href="idleNinjaEN.html">Idle Ninja Online ▶</a>
+        <footer id="toIdleNinja">
+            <div class="titleBannerText">
+                <a class="otherProject" href="idleNinjaEN.html">View Idle Ninja Online ▶</a>
+            </div>
         </footer>
     </body>
 </html>
