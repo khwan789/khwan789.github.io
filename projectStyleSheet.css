@@ -21,7 +21,7 @@ li{
 
 .titleVideo{
     width: 100%;
-    height: 670px;
+    height: 609px;
     margin-bottom: 3%;
 }
 
@@ -38,6 +38,7 @@ li{
 .downloadBtn{  /* Corrected typo */
     width: 30%;
     margin: 3%;
+    min-width: 100px;
 }
 
 .title-large{  /* Renamed from .big1 */
@@ -128,6 +129,11 @@ li{
 #titleChapter{
     background-image: url("ninjaSurvivor_bg.webp");
     background-position: center 65%;
+}
+
+#titleOrbit{
+    background-image: url("orbitBG.png");
+    background-position: top;
 }
 
 .flowChart{

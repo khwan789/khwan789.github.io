@@ -159,6 +159,15 @@ nav{
     overflow: hidden;
     align-content: center;
 }
+#orbitBG{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url("orbitBG.png");
+    background-position: center 0%;
+    overflow: hidden;
+    align-content: center;
+}
 
 .myGames{
     display: inline-block;
