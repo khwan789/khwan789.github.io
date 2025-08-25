@@ -1,0 +1,31 @@
+{
+  "project_info": {
+    "project_number": "981698220306",
+    "project_id": "pear-tree-blockten",
+    "storage_bucket": "pear-tree-blockten.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:981698220306:ios:4c0a640743136431a1e3cb",
+        "android_client_info": {
+          "package_name": "com.PearTree.BlockTen"
+        }
+      },
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQyTC1uzcOoY0b8-LqaSqQRf7gB0GDIjc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 0
+        },
+        "appinvite_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
