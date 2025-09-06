@@ -20,8 +20,8 @@ li{
 }
 
 .titleVideo{
-    width: 100%;
-    height: 609px;
+    width: 50%;
+    height: 300px;
     margin-bottom: 3%;
 }
 
@@ -82,7 +82,7 @@ li{
 
 .titleBanner{
     width: 100%;
-    height: 460px;
+    height: 320px;
     background-size: cover;
     overflow: hidden;
 }
@@ -100,7 +100,7 @@ li{
 }
 .image{
     border-radius: 15px;
-    width: 100%;
+    width: 50%;
 }
 .imgLeft{
     float: left;
