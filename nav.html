@@ -1,0 +1,104 @@
+<nav>
+  <div class="internalLinks">
+    <a href="en.html" class="home" data-i18n="home">Home</a>
+
+    <div class="dropdown">
+      <button class="dropbtn" data-i18n="projects">Projects</button>
+      <div class="dropdown-content">
+        <div class="navPadding"></div>
+        <a href="idleNinjaEN.html" data-page="idleNinja">- Idle Ninja Online</a>
+        <a href="ninjaSurvivorEN.html" data-page="ninjaSurvivor">- Ninja Survivors Online</a>
+        <a href="orbitEN.html" data-page="orbit">- OR-BIT</a>
+        <a href="tenMatchEN.html" data-page="tenMatch">- Ten Match</a>
+      </div>
+    </div>
+
+    <a href="Resume.pdf" class="resume" target="_blank" data-i18n="resume">Resume</a>
+    <button id="langToggle" class="langBtn" type="button" aria-label="Switch language">한국어</button>
+  </div>
+
+  <div class="externalLinks">
+    <a href="https://www.linkedin.com/in/kyunghwan-sul-11939597/" target="_blank" rel="noopener"><img src='branding/lnLogo.png' alt="LinkedIn"></a>
+    <a href="https://www.facebook.com/kyunghwan.sul" target="_blank" rel="noopener"><img src='branding/fbLogo.png' alt="Facebook"></a>
+  </div>
+</nav>
+<script>
+(function() {
+  var htmlLang = (document.documentElement.getAttribute('lang') || 'en').toLowerCase();
+  var path = (location.pathname.split('/').pop() || '').toLowerCase();
+  var isKR = htmlLang.indexOf('ko') === 0 || /kr\.html$/.test(path) || path === 'kr.html';
+
+  var i18n = {
+    en: { home: 'Home', projects: 'Projects', resume: 'Resume', btn: '한국어' },
+    ko: { home: 'Home', projects: 'Projects', resume: 'Resume', btn: 'EN' }
+  };
+  var lang = isKR ? 'ko' : 'en';
+
+  var t = i18n[lang];
+  var elHome = document.querySelector('nav .home[data-i18n]');
+  var elProj = document.querySelector('nav .dropbtn[data-i18n]');
+  var elResume = document.querySelector('nav .resume[data-i18n]');
+  var btn = document.getElementById('langToggle');
+  if (elHome) elHome.textContent = t.home;
+  if (elProj) elProj.textContent = t.projects;
+  if (elResume) elResume.textContent = t.resume;
+  if (btn) { btn.textContent = t.btn; btn.setAttribute('aria-label', isKR ? 'Switch to English' : '한국어로 보기'); }
+
+  function altVersion(url) {
+    if (!url) return url;
+    var u = url.replace(/^\/?/, '');
+    if (u === 'en.html' || u === '' ) return isKR ? 'en.html' : 'kr.html';
+    if (u === 'kr.html') return isKR ? 'en.html' : 'kr.html';
+    u = u.replace(/([A-Za-z]+)(EN|KR)\.html$/i, function(_, base, suffix) {
+      return base + (suffix.toUpperCase() === 'EN' ? 'KR' : 'EN') + '.html';
+    });
+    return u;
+  }
+
+  var internal = document.querySelectorAll('nav a[href]:not([target])');
+  internal.forEach(function(a){
+    var href = a.getAttribute('href');
+    if (!href) return;
+    if (/^(en|kr)\.html$/i.test(href) || /(idleNinja|ninjaSurvivor|orbit|tenMatch)(EN|KR)\.html$/i.test(href)) {
+      if (isKR) {
+        href = href
+          .replace(/^en\.html$/i, 'kr.html')
+          .replace(/EN\.html$/i, 'KR.html');
+      } else {
+        href = href
+          .replace(/^kr\.html$/i, 'en.html')
+          .replace(/KR\.html$/i, 'EN.html');
+      }
+      a.setAttribute('href', href);
+    }
+  });
+
+  if (btn) {
+    btn.addEventListener('click', function() {
+      var current = path || 'en.html';
+      var target = altVersion(current);
+      if (!target || target.toLowerCase() === current) {
+        target = isKR ? 'en.html' : 'kr.html';
+      }
+      location.href = target;
+    });
+  }
+})();
+</script>
+
+<style>
+.langBtn {
+  margin-left: 12px;
+  padding: 8px 12px;
+  background: #222;
+  color: #ddd;
+  border: 1px solid #444;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity .15s ease;
+}
+.langBtn:hover { opacity: .9; color: #fff; }
+@media only screen and (max-width: 768px) {
+  .langBtn { padding: 6px 10px; }
+}
+</style>

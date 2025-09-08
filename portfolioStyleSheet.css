@@ -22,6 +22,7 @@ nav{
     position: fixed;
     background-color: rgba(0,0,0,0.7);  /* Changed from rgb to rgba */
 }
+
 .navPadding{
     margin-top: 9px;
 }
@@ -136,6 +137,12 @@ nav{
 }
 
 #projects{
+    width: 100%;
+    height: 740px;
+    background-color: black;
+    align-content: center;
+}
+#personal-projects{
     width: 100%;
     height: 740px;
     background-color: black;

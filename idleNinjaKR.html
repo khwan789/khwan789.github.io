@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
     <head>
         <meta charset="utf-8" />
         <title>Kyunghwan's Portfolio</title>
@@ -11,7 +11,6 @@
         <!--Bootstrap-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
         <!--Mine-->
         <link rel="stylesheet" type="text/css" href="portfolioStyleSheet.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -19,29 +18,8 @@
 
     </head>
     <body>
-
-        <nav>
-            <div class="internalLinks">
-                <a href="kr.html" class="home">Home</a>
-
-
-                <div class="dropdown">
-                    <button class="dropbtn">Projects</button>
-                    <div class="dropdown-content">
-                        <div class="navPadding"></div>
-                        <a href="idleNinjaKR.html">- 닌자 키우기 온라인</a>
-                        <a href="ninjaSurvivorKR.html">- 닌자 서바이벌 온라인</a>
-                    </div>
-                </div>
-
-                <a href="Resume_kr.pdf" class="resume" target="_blank">Resume</a>
-            </div>
-
-            <div class="externalLinks">
-                <a href="https://www.linkedin.com/in/kyunghwan-sul-11939597/" target="_blank"><img src='branding/lnLogo.png'></a>
-                <a href="https://www.facebook.com/kyunghwan.sul" target="_blank"><img src='branding/fbLogo.png'></a>
-            </div>
-        </nav>
+        <div id="site-nav"></div>
+        <script src="nav-loader.js" defer></script>
 
         <div class="titleBanner" id="titleIdleNinja">
             <div class="titleBannerText">
@@ -70,8 +48,7 @@
 
 
         <div class="project">
-            <iframe class="titleVideo" src="https://www.youtube.com/embed/xTedBEaV4_8?si=hwHrJfo678WHsT4X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+            <iframe class="titleVideo" src="https://www.youtube.com/embed/MeuG-g9OqUU" title="Idle Ninja Online (REBOOT)_ land" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
             <!--닌자 키우기 요약-->
             <div class="container-fluid">
@@ -81,7 +58,9 @@
                         <p class="title-large">닌자 키우기 온라인</p>
                     </div>
                     <div class="col-sm-8">
-                        <p>'닌자 키우기 온라인'은 2021년 출시한 방치형 RPG 장르의 모바일 게임으로, 뛰어난 성장감과 5개의 표창 덱으로 구성되는 독특한 시스템으로 많은 유저에게 사랑받았습니다. 이후 블록체인을 연동한 P2E 요소와 이어진 NFT 소환수 출시를 통해 한 단계 더 도약을 경험하기도 하였습니다.</p>
+                        <p>'닌자 키우기 온라인'은 2021년 출시한 방치형 RPG 장르의 모바일 게임으로, 뛰어난 성장감과 5개의 표창 덱으로 구성되는 독특한 시스템으로 많은 유저에게 사랑받았습니다.</p>
+                        <br>
+                        <p>이후 블록체인을 연동한 P2E 요소와 이어진 NFT 소환수 출시를 통해 한 단계 더 도약을 경험하기도 하였습니다.</p>
                         <br>
                         <p>3년이 넘는 글로벌 서비스 기간 동안 꾸준한 성과를 기반으로 방치형 RPG와 P2E 게임 장르에서 유의미한 입지를 가지고 있는 프로젝트입니다.</p>
                     </div>
@@ -220,51 +199,6 @@
                     </div>
                 </div>
                 <br>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <p class="title-large">던전 보상</p>
-                        <br>
-                        <div >
-                            <img class="imgLeft" src="ringMat1.png" width="40%">
-                            <img class="imgLeft" src="ringMat2.png" width="40%">
-                        </div>
-                        <br>
-
-                    </div>
-                    <div class="col-sm-8">
-                        <p class="subtitle-large">반지 재료</p>
-                        <ul>
-                            <li><b>반지 제작 / 강화 신규 재료</b> : 세공석 (좌), 마광석 (우).</li>
-                            <li>장비 획득 PLC 조절 및 지속적인 상위 목표 제공을 위해 상위 등급 반지 제작에 요구되는 "마광석"은 높은 단계 던전에서 획득 가능.</li>
-                        </ul>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div >
-                            <img class="imgLeft" src="ring1.png" width="40%">
-                            <img class="imgLeft" src="ring2.png" width="40%">
-                        </div>
-                        <div>
-                            <img class="imgLeft" src="ring3.png" width="40%">
-                            <img class="imgLeft" src="ring4.png" width="40%">
-                        </div>
-                        <br>
-                    </div>
-
-                    <div class="col-sm-8">
-                        <p class="subtitle-large">반지 장비</p>
-                        <ul>
-                            <li><b>신규 스탯</b> : 반지에서 제공되는 "방어력 무시" 스탯을 통해 신규 성장 트랙 추가.</li>
-                            <li><b>랜덤 부옵션</b> : 랜덤으로 획득되는 부옵션 스탯은 인 게임 아이템을 소모해서 다른 랜덤 스탯으로 변경 가능.</li>
-                            <li>선호되는 옵션을 선택할 수 있는 기회 제공 및 추가 BM을 제공할 수 있는 여지 확보.</li>
-                        </ul>
-                    </div>
-                </div>
-                <br>
-
-
                 <div class="lineBold"></div>
                 <!--회고 마무리-->
                 <div class="row">
@@ -393,61 +327,9 @@
                 </div>
                 <br>
                 <br>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <img class="imgLeft" src="bdMission.png" width="90%">
-                        <br><br>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="subtitle-large">이벤트 임무</p>
-                        <ul>
-                            <li><b>이벤트 시작</b> : 임무 팝업을 통해 청룡을 획득하여 팝업 진입 유도.</li>
-                            <li>청룡 획득 이후 보상은 청룡 성장의 주 재료인 '여의주'로 변경.</li>
-                            <li>임무를 완료하여 게이지가 채워지면 '여의주' 획득.</li>
-                            <li><b>모든 플레이어 대상</b> : 청룡을 성장시키는 경험을 하여 몰입도 증가.</li>
-                        </ul>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <img class="imgLeft" src="bdPopup.png" width="90%">
-                        <br><br>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <p class="subtitle-large">청룡 성장 팝업</p>
-                        <ol>
-                            <li>현재 및 상위 등급 청룡 소환수의 정보 확인 가능.</li>
-                            <li>아이템 사용을 통한 소환수 레벨업 및 승급 가능.</li>
-                        </ol>
-                    </div>
-                </div>
-                <br>
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <img class="imgLeft" src="bdUltimate.png" width="90%">
-                        <br><br>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <p class="subtitle-large">초월 등급 청룡</p>
-                        <ol>
-                            <li>추가 스탯들은 아이템을 사용하여 다른 랜덤 옵션으로 변경 가능.</li>
-                            <li>청룡 소환수의 스킬은 아래 3개의 스킬 중 하나로 강화 가능.</li>
-
-                        </ol>
-                        <ul>
-                            <li>3개의 스킬 모두 해금이 가능하며 필요에 따라 변경 가능.</li>
-                            <li>이벤트 종료 이후에도 효과 변경 및 스킬 해금이 가능하도록 하여 추가적인 BM 요소로 동작할 수 있는 여지 확보.</li>
-                        </ul>
-
-                    </div>
-                </div>
-                <br>
-
                 <!--청룡 소환수 스킬-->
+                <p class="title-large">강화 스킬</p>
+                <br>
                 <div class="row">
                     <div class="col-sm-6">
                         <div style="float: left;">
@@ -459,7 +341,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <p class="subtitle-large">강화 스킬</p>
+
                         <ol>
                             <li>넓은 범위의 적에게 약한 피해를 가하고 범위 내 아군들에게 버프를 적용하여 생존성을 강화하는 스킬.</li>
                             <li>한정된 범위 내 단일 대상에 대한 피해량이 증가하여 보스에게 보다 강한 대미지를 가할 수 있는 스킬.
@@ -467,26 +349,32 @@
                             <li>투사체가 몬스터들을 추적하여 보다 효율적으로 적들을 처치할 수 있는 스킬.</li>
                         </ol>
                     </div>
-
+                </div>
+                <br>
+                <br>
+                <p class="title-large">UI / UX</p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img class="imgLeft" src="bdMission.png" width="100%">
+                    </div>
+                    <div class="col-sm-6">
+                        <img class="imgLeft" src="bdPopup.png" width="100%">
+                    </div>
                 </div>
                 <br>
                 <div class="row">
-                    <div class="col-sm-6">
-                        <img class="image" src="bdOffer.png" style="width: 50%;"/>
+                    <div class="col-sm-3">
+                        <img class="image" src="bdOffer.png" style="width: 100%;"/>
                         <br><br>
                     </div>
-                    <div class="col-sm-6">
-                        <p class="subtitle-large">타임 특가 오퍼 상품</p>
-                        <ul>
-                            <li><b>청룡 레벨 10 도달</b> : 다음 등급으로 승급 시 필요한 재화를 제공하는 오퍼 상품을 제안.</li>
-                            <li><b>청룡 승급 이후</b> : 레벨을 올릴 수 있는 경험치 아이템과 추가적인 '여의주'를 미리 획득할 수 있는 오퍼 상품을 제안.</li>
-                        </ul>
+                    <div class="col-sm-9">
+                        <img class="imgLeft" src="bdUltimate.png" width="100%">
+                        <br><br>
                     </div>
                 </div>
-
-                <div class="lineBold"></div>
-                <p class="title-large">성과</p>
                 <br>
+                <br>
+                <p class="title-large">데이터</p>
                 <div class="row">
                     <div class="col-sm-6">
 
@@ -494,40 +382,39 @@
                         <br><br>
                     </div>
                     <div class="col-sm-6">
-                        <p class="subtitle-large">여의주 지급</p>
+
                         <ul>
-                            <li><b>여의주 가치</b> : 소환수들의 가치 평균을 통한 여의주의 가치 계산.</li>
-                            <li>높은 할인율을 적용하여 이벤트 상품을 통해 판매.</li>
-                            <br>
+                            <li><b>여의주 가치</b> : 높은 할인율을 적용하여 이벤트 상품을 통해 판매.</li>
                             <li><b>전설 등급 무료 획득</b> : 총 400개의 여의주를 무료로 획득하여 모든 유저들이 전설 등급 도달 가능.</li>
                             <li>전설 등급 청룡 체험을 통해 성능 및 여의주의 가치 확인 가능.</li>
                             <li><b>타임 특가 오퍼 상품</b> : 순차적으로 더 많은 여의주 제공 및 더 높은 할인율을 적용.</li>
-                            <li>높은 가격대임에도 상품 효율 체감이 가능하여 유저들의 구매 욕구 자극.</li>
-                            <br>
                             <li><b>상품 구매 임무</b> : 상품 구매 시 포인트를 채워 여의주 획득 가능.</li>
-                            <li>기존 상품 구매로도 모든 여의주 획득이 가능하나 이벤트 상품들이 가장 효율적이도록 계산되어 이벤트 상품의 구매 가치 증가.</li>
                             <li><b>여의주 가치 보존</b> : 여분의 여의주들은 이벤트 종료 시점 인게임 아이템들로 교환 가능.</li>
                         </ul>
 
                     </div>
                 </div>
-                <br><br>
 
+
+                <div class="lineBold"></div>
+                <p class="title-large">성과</p>
+                <br>
                 <div class="row">
                     <div class="col-sm-6">
                         <img src="bdRevenueTableKR.png" width="100%" >
                         <br><br>
                     </div>
                     <div class="col-sm-6">
+                        <p class="subtitle-large">매출</p>
+                        <ul>
+                            <li>iAP 상품 판매를 통한 3억원+ 매출 달성.</li>
+                        </ul>
                         <p class="subtitle-large">이벤트 기간 판매 상품</p>
                         <ul>
                             <li><b>저가형 / 고효율 상품</b> : 고과금 유저를 주 대상으로 하는 BM 기조에서 벗어나 폭넓은 유저에게 동기를 제공하는 BM으로 작용.</li>
-                            <li>코스튬 교환을 위한 "청룡의 비늘 세트"</li>
-                            <li>대량의 루비 구매가 가능한 "설날 루비 특가"</li>
-                            <li>주무기 '표창'의 최고 등급 강화 재료 "궁극의 각성석 지원 세트".</li>
                             <li>이벤트 전체 매출의 32% 달성.</li>
                             <br>
-                            <li><b>청룡 성장 상품</b> : 성장도가 낮은 초기 유저 포함 모든 유저에게  매력적으로 다가올 수 있는 강력한 성장 트랙으로 작용하는 청룡.</li>
+                            <li><b>청룡 성장 상품</b> : 성장도가 낮은 초기 유저 포함 모든 유저에게 매력적으로 다가올 수 있는 강력한 성장 트랙으로 작용하는 청룡.</li>
                             <li>여의주를 지급하는 상품들이 매출의 58% 달성.</li>
                         </ul>
 

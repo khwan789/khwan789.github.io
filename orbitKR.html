@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="ko">
     <head>
         <meta charset="utf-8" />
         <title>Kyunghwan's Portfolio</title>
@@ -15,15 +15,16 @@
         <link rel="stylesheet" type="text/css" href="portfolioStyleSheet.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="projectStyleSheet.css"/> 
-        <link rel="shortcut icon" href="TenMatch/TemplateData/favicon.ico">
-        <link rel="stylesheet" href="TenMatch/TemplateData/style.css">
+        <link rel="shortcut icon" href="Orbit/TemplateData/favicon.ico">
+        <link rel="stylesheet" href="Orbit/TemplateData/style.css">
+
     </head>
     <body>
         <div id="site-nav"></div>
         <script src="nav-loader.js" defer></script>
 
-        <div class="titleBanner" id="titleTenMatch">
-            <div class="titleBannerTextNoBG">
+        <div class="titleBanner" id="titleOrbit">
+            <div class="titleBannerText">
                 <div class="container-fluid centerHeight">
                     <div class="row centerHeight">
                         <div class="col-sm-4 centerHeight">
@@ -31,11 +32,12 @@
                         </div>
                         <div class="col-sm-4 centerHeight">
                             <br><br>
-                            <img class="logoBig" src="tenMatchLogo.png">
+                            <img class="logoBig" src="orbit_logo.png">
+                            <br><br>
                             <div class="downloads">
-                                <a href="https://apps.apple.com/gb/app/ten-match-block-puzzle/id6748253969?uo=2" target="_blank">
+                                <a href="https://apps.apple.com/kr/app/orbit-jump-slide-round-run/id6744889542?uo=2 " target="_blank">
                                     <img class="downloadBtn" src="branding/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"></a> 
-                                <a href="https://play.google.com/store/apps/details?id=com.PearTree.BlockTen&pcampaignid=web_share" target="_blank">
+                                <a href="https://play.google.com/store/apps/details?id=com.PearTree.ORBIT" target="_blank">
                                     <img class="downloadBtn" src="branding/GetItOnGooglePlay_Badge_Web_color_English.png"></a> 
                             </div>
                         </div>
@@ -54,29 +56,30 @@
                 <!--Project Description-->
                 <div class="row">
                     <div class="col-sm-4">
-                        <p class="title-large">Ten Match</p>
-                        <p>Mobile Puzzle Game</p>
+                        <p class="title-large">OR-BIT</p>
+                        <p>Hypercasual Mobile Game</p>
                     </div>
                     <div class="col-sm-8">
-                        <p>Inspired by the famous Fruit Box Game (or also called the Apple game) and my personal favorite, Block Blast.</p>
+                        <p>Orbit around the planet!</p>
+                        <p>Dodge obstacles by jumping or sliding as your character runs in circles.</p>
+                        <p>Casual arcade game that tests your reflexes and lets you chase high scores with every run.</p>
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-sm-4">
-                        <p class="title-large">How to Play</p>
+                        <p class="title-large">Click GOGO to Play</p>
                     </div>
                     <div class="col-sm-8">
-                        <p>Drag and drop the blocks</p>
-                        <p>Align the numbers so that the total equals to ten.</p>
+                        <p>SPACE - Jump</p>
+                        <p>Down Key - Slide</p>
                     </div>
                 </div>
                 <br>
             </div>
         </div>
 
-
-        <div id="unity-container" class="unity-desktop">
+        <div id="unity-container" class="unity-desktop" >
             <canvas id="unity-canvas" tabindex="-1"></canvas>
             <div id="unity-loading-bar">
                 <div id="unity-logo"></div>
@@ -86,7 +89,7 @@
             </div>
             <div id="unity-warning"> </div>
             <div id="unity-footer">
-                <div id="unity-logo-title-footer"></div>
+                <div id="unity-webgl-logo"></div>
             </div>
         </div>
 
@@ -98,24 +101,33 @@
                         <p class="title-large">Description</p>
                     </div>
                     <div class="col-sm-8">
-                        <p class="subtitle-large">Result</p>
+                        <p class="subtitle-large">Why I Made This Game</p>
                         <ul>
-                            <li>With only 15% Day 1 retention, the project has no further updates planned.</li>
+                            <li>To stay committed to game development and continue learning during a one-year break, including recovery from wrist surgery.</li>
+                            <li>Leveraged ChatGPT to assist with development and improve rapid prototyping skills required of game designers.</li>
+                            <li>Challenged myself to create a hyper-casual game that emphasizes individual skill in short play sessions.</li>
                         </ul>
-                        <p class="subtitle-large">The Details</p>
+                        <div class="line"></div>
+                        <p class="subtitle-large">Development with ChatGPT</p>
                         <ul>
-                            <li>Ten Match has been the project where I went through a lot of trial and error in system design.</li>
-                            <li>Especially when implementing the logic for block destruction and spawning.</li>
-                            <img src=tmFlowEN.jpg width="100%">
-                            <li>The number inside special blocks decreases by 1 each time a new block is placed.</li>
+                            <li>Developed core gameplay features and overall UI functionalities.</li>
+                            <li>Created an obstacle placement tool using Unity Editor scripting for efficient level design.</li>
+                            <li>Optimized performance through object pooling implementation.</li>
+                            <li>Implemented an achievement system and a character purchase feature using in-game currency to support character collection.</li>
                         </ul>
                         <div class="line"></div>
                         <p class="subtitle-large">Business Model</p>
                         <ul>
                             <li>In-game advertising (Ad-based monetization).</li>
-                            <li>IAP ad removal.</li>
                         </ul>
                         <div class="line"></div>
+                        <p class="subtitle-large">To-Do</p>
+                        <ul>
+                            <li>Leaderboard Setup for both mobile markets.</li>
+                            <li>Additional playable characters.</li>
+                            <li>Additional game modes for continuous gameplay.</li>
+                            <li>In App Purchase : Remove Ads.</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -124,12 +136,18 @@
 
         <footer>
             <div class="titleBannerText">
-                <a class="otherProject" href="orbitEN.html">OR-BIT ▶</a>
+                <a class="otherProject" href="tenMatchKR.html">Ten Match : Block Puzzle 보러가기 ▶</a>
             </div>
         </footer>
 
+
         <script>
+
+            var container = document.querySelector("#unity-container");
             var canvas = document.querySelector("#unity-canvas");
+            var loadingBar = document.querySelector("#unity-loading-bar");
+            var progressBarFull = document.querySelector("#unity-progress-bar-full");
+            var warningBanner = document.querySelector("#unity-warning");
 
             // Shows a temporary message banner/ribbon for a few seconds, or
             // a permanent error message on top of the canvas if type=='error'.
@@ -138,7 +156,6 @@
             // way that non-critical warnings and error messages are presented to the
             // user.
             function unityShowBanner(msg, type) {
-                var warningBanner = document.querySelector("#unity-warning");
                 function updateBannerVisibility() {
                     warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
                 }
@@ -156,17 +173,16 @@
                 updateBannerVisibility();
             }
 
-            var buildUrl = "TenMatch/Build";
-            var loaderUrl = buildUrl + "/Windows.loader.js";
+            var buildUrl = "Orbit/Build";
+            var loaderUrl = buildUrl + "/web.loader.js";
             var config = {
-                arguments: [],
-                dataUrl: buildUrl + "/Windows.data.br",
-                frameworkUrl: buildUrl + "/Windows.framework.js.br",
-                codeUrl: buildUrl + "/Windows.wasm.br",
-                streamingAssetsUrl: "TenMatch/StreamingAssets",
+                dataUrl: buildUrl + "/web.data",
+                frameworkUrl: buildUrl + "/web.framework.js",
+                codeUrl: buildUrl + "/web.wasm",
+                streamingAssetsUrl: "Orbit/StreamingAssets",
                 companyName: "PearTree",
-                productName: "Ten Match",
-                productVersion: "1.19",
+                productName: "OR-BIT",
+                productVersion: "1.1.0",
                 showBanner: unityShowBanner,
             };
 
@@ -196,6 +212,7 @@
                     document.head.appendChild(meta);
                 }
 
+                container.className = "unity-mobile";
                 canvas.className = "unity-mobile";
 
                 // To lower canvas resolution on mobile devices to gain some
@@ -205,19 +222,19 @@
 
             } else {
                 // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+
                 canvas.style.width = "100%";
             }
 
-            document.querySelector("#unity-loading-bar").style.display = "block";
+            loadingBar.style.display = "block";
 
             var script = document.createElement("script");
             script.src = loaderUrl;
             script.onload = () => {
                 createUnityInstance(canvas, config, (progress) => {
-                    document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
+                    progressBarFull.style.width = 100 * progress + "%";
                 }).then((unityInstance) => {
-                    document.querySelector("#unity-loading-bar").style.display = "none";
-
+                    loadingBar.style.display = "none";
 
                 }).catch((message) => {
                     alert(message);

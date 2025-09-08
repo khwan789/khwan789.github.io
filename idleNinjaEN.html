@@ -11,7 +11,6 @@
         <!--Bootstrap-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
         <!--Mine-->
         <link rel="stylesheet" type="text/css" href="portfolioStyleSheet.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -19,30 +18,8 @@
 
     </head>
     <body>
-
-        <nav>
-            <div class="internalLinks">
-                <a href="en.html" class="home">Home</a>
-
-                <div class="dropdown">
-                    <button class="dropbtn">Projects</button>
-                    <div class="dropdown-content">
-                        <div class="navPadding"></div>
-                        <a href="idleNinjaEN.html">- Idle Ninja Online</a>
-                        <a href="ninjaSurvivorEN.html">- Ninja Survivors Online</a>
-                        <a href="orbitEN.html">- OR-BIT</a>
-                        <a href="tenMatchEN.html">- Ten Match</a>
-                    </div>
-                </div>
-
-                <a href="Resume.pdf" class="resume" target="_blank">Resume</a>
-            </div>
-
-            <div class="externalLinks">
-                <a href="https://www.linkedin.com/in/kyunghwan-sul-11939597/" target="_blank"><img src='branding/lnLogo.png'></a>
-                <a href="https://www.facebook.com/kyunghwan.sul" target="_blank"><img src='branding/fbLogo.png'></a>
-            </div>
-        </nav>
+        <div id="site-nav"></div>
+        <script src="nav-loader.js" defer></script>
 
         <div class="titleBanner" id="titleIdleNinja">
             <div class="titleBannerText">
@@ -97,9 +74,9 @@
                         <p class="subtitle-large">Content Design</p>
                         <ul>
                             <li><b>Field level design</b> suitable for idle mobile games.</li>
-                            <li>Monster / boss patterns and implemented story elements for immersive game play.</li>
-                            <li><b>Boss dungeons</b> where players can earn equipment and titles, providing a sense of growth and accomplishment.</li>
-                            <li><b>The Four Gods</b> : The early stage boss dungeons player encounters, designed with intuitive patterns.</li>
+                            <li>Designed Monster / boss patterns and implemented story elements.</li>
+                            <li><b>Boss dungeon design</b> where players can earn equipment and titles, providing a sense of growth and accomplishment.</li>
+                            <li><b>The Four Gods</b> : Early stage boss dungeons player encounters, designed with intuitive patterns.</li>
                             <li><b>High God "Enraged Shuten Doji"</b> : Designed to challenge high-level players and provide new equipment for additional growth track.</li>
                         </ul>
                         <div class="line"></div>
@@ -107,9 +84,9 @@
                         <ul>
                             <li><b>Seasonal events</b> to drive player growth and in-game revenue.</li>
                             <li><b>Data analysis</b> to identify player needs, improving metrics and driving revenue through designing event contents and BM.</li> 
-                            <li><b>Event items</b>, offering additional stats, as attractive rewards for player motivation.</li>
-                            <li><b>Summons (Pets)</b> : Battles alongside players, offers growth potential through higher tier upgrades, and provides opportunities for additional BM through upgrade materials.</li>
-                            <li><b>Costumes (Skins)</b> : Express player individuality as cosmetic elements. Offers additional stats and effects through upgrade, providing opportunities for additional BM through upgrade materials.</li>
+                            <li><b>Event items</b>, offering additional stats, as attractive rewards for player motivation, and provides opportunities for additional BM through upgrade materials.</li>
+                            <li><b>Summons (Pets)</b> : Battles alongside players, offers growth potential through higher tier upgrades.</li>
+                            <li><b>Costumes (Skins)</b> : Express player individuality as cosmetic elements. Offers additional stats and effects through upgrade.</li>
                         </ul>
                     </div>
                 </div>
