@@ -53,6 +53,13 @@ li{
     font-weight: bold;
     padding-bottom: 3%;
 }
+
+.subtitle-small{  /* Renamed from .big2 */
+    color: rgb(80,80,80);
+    font-size: 1em;
+    font-weight: bold;
+}
+
 .titleMain{
     font-size: 4em;
     font-weight: bold;
