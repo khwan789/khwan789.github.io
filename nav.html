@@ -6,6 +6,7 @@
       <button class="dropbtn" data-i18n="projects">Projects</button>
       <div class="dropdown-content">
         <div class="navPadding"></div>
+        <a href="idleSheepEN.html" data-page="idleSheep">- Shepherd Girl: Idle Sheep Farm</a>
         <a href="idleNinjaEN.html" data-page="idleNinja">- Idle Ninja Online</a>
         <a href="ninjaSurvivorEN.html" data-page="ninjaSurvivor">- Ninja Survivors Online</a>
         <a href="orbitEN.html" data-page="orbit">- OR-BIT</a>
@@ -59,7 +60,7 @@
   internal.forEach(function(a){
     var href = a.getAttribute('href');
     if (!href) return;
-    if (/^(en|kr)\.html$/i.test(href) || /(idleNinja|ninjaSurvivor|orbit|tenMatch)(EN|KR)\.html$/i.test(href)) {
+    if (/^(en|kr)\.html$/i.test(href) || /(idleSheep|idleNinja|ninjaSurvivor|orbit|tenMatch)(EN|KR)\.html$/i.test(href)) {
       if (isKR) {
         href = href
           .replace(/^en\.html$/i, 'kr.html')

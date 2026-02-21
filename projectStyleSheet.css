@@ -114,6 +114,11 @@ li{
     border-radius: 15px;
 }
 
+#titleIdleSheep{
+    background-image: url("idleSheep_bg.png");
+    background-position: center 42%;
+}
+
 #titleIdleNinja{
     background-image: url("idleNinja_bg2.png");
     background-position: center 80%;
@@ -175,6 +180,11 @@ li{
 
 #toIdleNinja{
     background-image: url("idleNinja_bg.webp");
+    background-position: center 45%;
+}
+
+#toIdleSheep{
+    background-image: url("idleSheep_bg.png");
     background-position: center 45%;
 }
 
